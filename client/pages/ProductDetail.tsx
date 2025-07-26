@@ -38,24 +38,24 @@ const productData = {
 const relatedProducts = [
   {
     id: 2,
-    title: "Urban Dreams",
+    title: "Hoy Su Voy a Ti Ch",
     price: 145,
-    image: "/placeholder.svg",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F855c73c7656048769aaec1b94a947d01?format=webp&width=800",
     rating: 4.9
-  },
-  {
-    id: 3,
-    title: "Botanical Serenity",
-    price: 67,
-    image: "/placeholder.svg",
-    rating: 4.7
   },
   {
     id: 4,
-    title: "Midnight Reflection",
+    title: "Jardín Interior",
     price: 199,
-    image: "/placeholder.svg",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F79a2f69167354bdcada4447668a484af?format=webp&width=800",
     rating: 4.9
+  },
+  {
+    id: 6,
+    title: "Tiempo y Espacio",
+    price: 156,
+    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F9e8f97e5509e4cefb906f378a3eb0018?format=webp&width=800",
+    rating: 4.8
   }
 ];
 
