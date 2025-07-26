@@ -110,7 +110,7 @@ export default function Gallery() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedStyles, setSelectedStyles] = useState<string[]>([]);
   const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
-  const [priceRange, setPriceRange] = useState([0, 300]);
+  const [priceRange, setPriceRange] = useState([0, 20]);
   const [sortBy, setSortBy] = useState("featured");
 
   // Handle URL parameters on component mount
