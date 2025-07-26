@@ -113,12 +113,14 @@ export default function ProductDetail() {
                 <Heart className="h-4 w-4" />
                 <span className="sr-only">Wishlist</span>
               </Button>
-              <Button variant="ghost" size="icon" className="relative">
-                <ShoppingCart className="h-4 w-4" />
-                <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-accent text-xs flex items-center justify-center text-accent-foreground">
-                  2
-                </span>
-                <span className="sr-only">Cart</span>
+              <Button variant="ghost" size="icon" className="relative" asChild>
+                <Link to="/cart">
+                  <ShoppingCart className="h-4 w-4" />
+                  <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-accent text-xs flex items-center justify-center text-accent-foreground">
+                    2
+                  </span>
+                  <span className="sr-only">Cart</span>
+                </Link>
               </Button>
             </nav>
           </div>
