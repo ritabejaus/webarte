@@ -11,7 +11,6 @@ import { useState } from "react";
 const productData = {
   id: 1,
   title: "Abstract Horizon",
-  artist: "Luna Martinez",
   price: 89,
   originalPrice: 120,
   images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
@@ -28,7 +27,7 @@ const productData = {
     style: "Contemporary Abstract",
     orientation: "Landscape"
   },
-  artist_bio: "Luna Martinez is a contemporary artist based in Barcelona, known for her vibrant abstract compositions that explore the relationship between color and emotion.",
+  artist_bio: "This piece is part of my ongoing exploration of abstract compositions that examine the relationship between color and emotion. Created in my Barcelona studio.",
   shipping: "Free shipping on orders over $75",
   returns: "30-day return policy",
   inStock: true,
@@ -40,7 +39,6 @@ const relatedProducts = [
   {
     id: 2,
     title: "Urban Dreams",
-    artist: "Alex Chen",
     price: 145,
     image: "/placeholder.svg",
     rating: 4.9
@@ -48,7 +46,6 @@ const relatedProducts = [
   {
     id: 3,
     title: "Botanical Serenity",
-    artist: "Maya Rodriguez",
     price: 67,
     image: "/placeholder.svg",
     rating: 4.7
@@ -56,7 +53,6 @@ const relatedProducts = [
   {
     id: 4,
     title: "Midnight Reflection",
-    artist: "James Park",
     price: 199,
     image: "/placeholder.svg",
     rating: 4.9
@@ -89,8 +85,8 @@ export default function ProductDetail() {
               <Link to="/categories" className="transition-colors hover:text-foreground/80 text-foreground/60">
                 Categories
               </Link>
-              <Link to="/artists" className="transition-colors hover:text-foreground/80 text-foreground/60">
-                Artists
+              <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+                About Me
               </Link>
               <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
                 About
@@ -179,7 +175,7 @@ export default function ProductDetail() {
                 </Button>
               </div>
               <h1 className="text-3xl font-bold mb-2">{productData.title}</h1>
-              <p className="text-lg text-muted-foreground mb-4">by {productData.artist}</p>
+              <p className="text-lg text-muted-foreground mb-4">Original Artwork</p>
               
               {/* Rating */}
               <div className="flex items-center gap-2 mb-4">
@@ -304,7 +300,7 @@ export default function ProductDetail() {
             <TabsList className="grid w-full grid-cols-3">
               <TabsTrigger value="description">Description</TabsTrigger>
               <TabsTrigger value="details">Details</TabsTrigger>
-              <TabsTrigger value="artist">About Artist</TabsTrigger>
+              <TabsTrigger value="artist">About This Piece</TabsTrigger>
             </TabsList>
             <TabsContent value="description" className="mt-6">
               <Card>
@@ -357,7 +353,7 @@ export default function ProductDetail() {
                   </div>
                   <div className="p-4">
                     <h3 className="font-semibold mb-1">{product.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-2">{product.artist}</p>
+                    <p className="text-sm text-muted-foreground mb-2">Original Artwork</p>
                     <div className="flex items-center justify-between">
                       <span className="font-bold">${product.price}</span>
                       <div className="flex items-center">
