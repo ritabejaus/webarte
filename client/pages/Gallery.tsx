@@ -157,7 +157,7 @@ export default function Gallery() {
     );
   });
 
-  const activeFiltersCount = selectedCategories.length + selectedStyles.length + selectedSizes.length + (priceRange[0] > 0 || priceRange[1] < 300 ? 1 : 0);
+  const activeFiltersCount = selectedCategories.length + selectedStyles.length + selectedSizes.length + (priceRange[0] > 0 || priceRange[1] < 20 ? 1 : 0);
 
   return (
     <div className="min-h-screen bg-background">
