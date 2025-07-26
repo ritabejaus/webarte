@@ -271,7 +271,7 @@ export default function ProductDetail() {
             <div className="space-y-3">
               <Button size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
                 <ShoppingCart className="mr-2 h-5 w-5" />
-                Add to Cart - ${productData.price * quantity}
+                Add to Cart - ${currentPrice * quantity}
               </Button>
               <Button variant="outline" size="lg" className="w-full">
                 <Heart className="mr-2 h-4 w-4" />
