@@ -16,9 +16,9 @@ const categories = [
     image: "/placeholder.svg",
     color: "from-purple-500 to-pink-500",
     examples: [
-      { id: 1, title: "Abstract Horizon", artist: "Luna Martinez", image: "/placeholder.svg", price: 89 },
-      { id: 2, title: "Color Symphony", artist: "Alex Rivera", image: "/placeholder.svg", price: 145 },
-      { id: 3, title: "Geometric Dreams", artist: "Sophie Chen", image: "/placeholder.svg", price: 78 }
+      { id: 1, title: "Abstract Horizon", image: "/placeholder.svg", price: 89 },
+      { id: 2, title: "Color Symphony", image: "/placeholder.svg", price: 145 },
+      { id: 3, title: "Geometric Dreams", image: "/placeholder.svg", price: 78 }
     ]
   },
   {
