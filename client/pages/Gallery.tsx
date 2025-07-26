@@ -87,26 +87,43 @@ const artworks = [
   }
 ];
 
-const categories = ["All", "Abstract", "Photography", "Nature", "Landscape", "Digital Art", "Portraits"];
-const styles = ["All", "Modern", "Contemporary", "Minimalist", "Realistic", "Classical"];
-const sizes = ["All", "Small", "Medium", "Large"];
+const categories = ["Abstract", "Photography", "Nature", "Landscape", "Digital Art", "Portraits"];
+const styles = ["Modern", "Contemporary", "Minimalist", "Realistic", "Classical"];
+const sizes = ["Small", "Medium", "Large"];
 
 export default function Gallery() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedStyle, setSelectedStyle] = useState("All");
-  const [selectedSize, setSelectedSize] = useState("All");
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [selectedStyles, setSelectedStyles] = useState<string[]>([]);
+  const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState([0, 300]);
   const [sortBy, setSortBy] = useState("featured");
 
+  const toggleFilter = (filterArray: string[], setFilterArray: (value: string[]) => void, value: string) => {
+    if (filterArray.includes(value)) {
+      setFilterArray(filterArray.filter(item => item !== value));
+    } else {
+      setFilterArray([...filterArray, value]);
+    }
+  };
+
+  const clearAllFilters = () => {
+    setSelectedCategories([]);
+    setSelectedStyles([]);
+    setSelectedSizes([]);
+    setPriceRange([0, 300]);
+  };
+
   const filteredArtworks = artworks.filter(artwork => {
     return (
-      (selectedCategory === "All" || artwork.category === selectedCategory) &&
-      (selectedStyle === "All" || artwork.style === selectedStyle) &&
-      (selectedSize === "All" || artwork.size === selectedSize) &&
+      (selectedCategories.length === 0 || selectedCategories.includes(artwork.category)) &&
+      (selectedStyles.length === 0 || selectedStyles.includes(artwork.style)) &&
+      (selectedSizes.length === 0 || selectedSizes.includes(artwork.size)) &&
       artwork.price >= priceRange[0] && artwork.price <= priceRange[1]
     );
   });
+
+  const activeFiltersCount = selectedCategories.length + selectedStyles.length + selectedSizes.length + (priceRange[0] > 0 || priceRange[1] < 300 ? 1 : 0);
 
   return (
     <div className="min-h-screen bg-background">
