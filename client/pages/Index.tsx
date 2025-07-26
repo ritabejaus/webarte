@@ -83,8 +83,8 @@ export default function Index() {
               <Link to="/categories" className="transition-colors hover:text-foreground/80 text-foreground/60">
                 Categories
               </Link>
-              <Link to="/artists" className="transition-colors hover:text-foreground/80 text-foreground/60">
-                Artists
+              <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+                About Me
               </Link>
               <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
                 About
@@ -129,12 +129,12 @@ export default function Index() {
               ✨ New Collection Available
             </Badge>
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
-              Discover
-              <span className="text-accent"> Extraordinary </span>
-              Art & Prints
+              Welcome to My
+              <span className="text-accent"> Art Gallery </span>
+              & Prints
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Transform your space with curated artwork from talented artists worldwide. From abstract masterpieces to stunning photography.
+              Transform your space with my original artwork and prints. From abstract masterpieces to detailed studies, each piece tells a unique story.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
@@ -142,7 +142,7 @@ export default function Index() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button variant="outline" size="lg">
-                View Artists
+                About My Work
               </Button>
             </div>
           </div>
@@ -155,8 +155,8 @@ export default function Index() {
         <div className="container">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight">Browse by Category</h2>
-              <p className="text-muted-foreground mt-2">Discover art that speaks to you</p>
+              <h2 className="text-3xl font-bold tracking-tight">Browse My Collections</h2>
+              <p className="text-muted-foreground mt-2">Explore different styles and themes in my work</p>
             </div>
             <Button variant="outline">
               View All Categories
@@ -189,7 +189,7 @@ export default function Index() {
           <div className="flex items-center justify-between mb-8">
             <div>
               <h2 className="text-3xl font-bold tracking-tight">Featured Artworks</h2>
-              <p className="text-muted-foreground mt-2">Hand-picked pieces from our curators</p>
+              <p className="text-muted-foreground mt-2">Recent pieces and popular prints from my collection</p>
             </div>
             <div className="flex items-center gap-2">
               <Button variant="outline" size="icon">
@@ -268,7 +268,7 @@ export default function Index() {
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight">Stay Inspired</h2>
             <p className="mt-4 text-muted-foreground">
-              Get the latest artworks, artist spotlights, and exclusive offers delivered to your inbox.
+              Get updates on new artworks, behind-the-scenes content, and exclusive offers delivered to your inbox.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
