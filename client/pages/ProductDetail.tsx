@@ -75,6 +75,24 @@ export default function ProductDetail() {
 
   const currentPrice = selectedSize ? getPriceForSize(selectedSize) : productData.price;
 
+  const handleAddToCart = () => {
+    if (!selectedSize) {
+      alert("Por favor selecciona un tamaño antes de agregar al carrito");
+      return;
+    }
+    if (!selectedFrame) {
+      alert("Por favor selecciona una opción de marco antes de agregar al carrito");
+      return;
+    }
+
+    // Here you would typically add to cart state/context
+    // For now, we'll show a success message and redirect to cart
+    alert(`¡Agregado al carrito!\n\n${productData.title}\nTamaño: ${selectedSize}\nMarco: ${selectedFrame}\nCantidad: ${quantity}\nPrecio: $${currentPrice * quantity}`);
+
+    // Redirect to cart page
+    window.location.href = '/cart';
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header/Navigation */}
