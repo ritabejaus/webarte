@@ -313,7 +313,8 @@ export default function Gallery() {
               : "space-y-6"
             }>
               {filteredArtworks.map((artwork) => (
-                <Card key={artwork.id} className={`group cursor-pointer hover:shadow-xl transition-all duration-300 ${
+              <Link key={artwork.id} to={`/product/${artwork.id}`}>
+                <Card className={`group cursor-pointer hover:shadow-xl transition-all duration-300 ${
                   viewMode === "list" ? "flex flex-row" : ""
                 }`}>
                   <CardContent className="p-0">
@@ -369,6 +370,7 @@ export default function Gallery() {
                     </div>
                   </CardContent>
                 </Card>
+              </Link>
               ))}
             </div>
 
