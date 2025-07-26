@@ -9,7 +9,6 @@ const featuredArtworks = [
   {
     id: 1,
     title: "Abstract Horizon",
-    artist: "Luna Martinez",
     price: 89,
     originalPrice: 120,
     image: "/placeholder.svg",
@@ -21,7 +20,6 @@ const featuredArtworks = [
   {
     id: 2,
     title: "Urban Dreams",
-    artist: "Alex Chen",
     price: 145,
     image: "/placeholder.svg",
     rating: 4.9,
@@ -32,7 +30,6 @@ const featuredArtworks = [
   {
     id: 3,
     title: "Botanical Serenity",
-    artist: "Maya Rodriguez",
     price: 67,
     originalPrice: 85,
     image: "/placeholder.svg",
@@ -44,7 +41,6 @@ const featuredArtworks = [
   {
     id: 4,
     title: "Midnight Reflection",
-    artist: "James Park",
     price: 199,
     image: "/placeholder.svg",
     rating: 4.9,
