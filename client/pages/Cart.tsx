@@ -258,11 +258,11 @@ export default function Cart() {
                     </div>
                   </div>
 
-                  {subtotal < 75 && (
+                  {subtotal < 25 && (
                     <div className="mt-4 p-3 bg-muted rounded-lg">
                       <div className="flex items-center gap-2 text-sm">
                         <Truck className="h-4 w-4 text-accent" />
-                        <span>Add ${(75 - subtotal).toFixed(2)} more for free shipping!</span>
+                        <span>Add ${(25 - subtotal).toFixed(2)} more for free shipping!</span>
                       </div>
                     </div>
                   )}
