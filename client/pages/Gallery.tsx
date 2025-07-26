@@ -13,7 +13,6 @@ const artworks = [
   {
     id: 1,
     title: "Abstract Horizon",
-    artist: "Luna Martinez",
     price: 89,
     originalPrice: 120,
     image: "/placeholder.svg",
@@ -26,7 +25,6 @@ const artworks = [
   {
     id: 2,
     title: "Urban Dreams",
-    artist: "Alex Chen",
     price: 145,
     image: "/placeholder.svg",
     rating: 4.9,
@@ -38,7 +36,6 @@ const artworks = [
   {
     id: 3,
     title: "Botanical Serenity",
-    artist: "Maya Rodriguez",
     price: 67,
     originalPrice: 85,
     image: "/placeholder.svg",
@@ -51,7 +48,6 @@ const artworks = [
   {
     id: 4,
     title: "Midnight Reflection",
-    artist: "James Park",
     price: 199,
     image: "/placeholder.svg",
     rating: 4.9,
@@ -63,7 +59,6 @@ const artworks = [
   {
     id: 5,
     title: "Digital Waves",
-    artist: "Sofia Kim",
     price: 78,
     image: "/placeholder.svg",
     rating: 4.6,
@@ -75,7 +70,6 @@ const artworks = [
   {
     id: 6,
     title: "Portrait in Blue",
-    artist: "Marcus Johnson",
     price: 156,
     originalPrice: 180,
     image: "/placeholder.svg",
@@ -165,8 +159,8 @@ export default function Gallery() {
               <Link to="/categories" className="transition-colors hover:text-foreground/80 text-foreground/60">
                 Categories
               </Link>
-              <Link to="/artists" className="transition-colors hover:text-foreground/80 text-foreground/60">
-                Artists
+              <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+                About Me
               </Link>
               <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
                 About
@@ -450,7 +444,7 @@ export default function Gallery() {
                       <div className="flex items-start justify-between mb-2">
                         <div className="min-w-0 flex-1">
                           <h3 className="font-semibold text-sm truncate">{artwork.title}</h3>
-                          <p className="text-xs text-muted-foreground">{artwork.artist}</p>
+                          <p className="text-xs text-muted-foreground">Original Artwork</p>
                         </div>
                         <Badge variant="outline" className="text-xs ml-2">
                           {artwork.category}
