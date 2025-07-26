@@ -16,9 +16,9 @@ const categories = [
     image: "/placeholder.svg",
     color: "from-purple-500 to-pink-500",
     examples: [
-      { id: 1, title: "Abstract Horizon", image: "/placeholder.svg", price: 89 },
-      { id: 2, title: "Color Symphony", image: "/placeholder.svg", price: 145 },
-      { id: 3, title: "Geometric Dreams", image: "/placeholder.svg", price: 78 }
+      { id: 1, title: "Figuras en Crecimiento", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F8148f42d866e42e9bc0246b3905bc629?format=webp&width=800", price: 89 },
+      { id: 2, title: "Hoy Su Voy a Ti Ch", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F855c73c7656048769aaec1b94a947d01?format=webp&width=800", price: 145 },
+      { id: 6, title: "Tiempo y Espacio", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F9e8f97e5509e4cefb906f378a3eb0018?format=webp&width=800", price: 156 }
     ]
   },
   {
