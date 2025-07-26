@@ -11,6 +11,7 @@ import Gallery from "./pages/Gallery";
 import Categories from "./pages/Categories";
 import Artists from "./pages/Artists";
 import About from "./pages/About";
+import ProductDetail from "./pages/ProductDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
