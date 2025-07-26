@@ -12,6 +12,7 @@ import Categories from "./pages/Categories";
 import Artists from "./pages/Artists";
 import About from "./pages/About";
 import ProductDetail from "./pages/ProductDetail";
+import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
