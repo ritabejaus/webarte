@@ -223,7 +223,7 @@ export default function Index() {
                     <div className="flex items-start justify-between mb-2">
                       <div className="min-w-0 flex-1">
                         <h3 className="font-semibold text-sm truncate">{artwork.title}</h3>
-                        <p className="text-xs text-muted-foreground">{artwork.artist}</p>
+                        <p className="text-xs text-muted-foreground">Original Artwork</p>
                       </div>
                       <Badge variant="outline" className="text-xs ml-2">
                         {artwork.category}
