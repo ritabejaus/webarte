@@ -193,22 +193,37 @@ export default function Gallery() {
         <div className="flex gap-8">
           {/* Sidebar Filters */}
           <aside className="w-80 space-y-6 hidden lg:block">
-            <div>
-              <h3 className="font-semibold mb-4">Filters</h3>
+            <div className="flex items-center justify-between">
+              <h3 className="font-semibold">Filters</h3>
+              {activeFiltersCount > 0 && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={clearAllFilters}
+                  className="text-xs text-muted-foreground hover:text-foreground"
+                >
+                  Clear all ({activeFiltersCount})
+                </Button>
+              )}
             </div>
 
             {/* Category Filter */}
             <div>
-              <h4 className="font-medium mb-3">Category</h4>
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="font-medium">Category</h4>
+                {selectedCategories.length > 0 && (
+                  <span className="text-xs text-muted-foreground">({selectedCategories.length})</span>
+                )}
+              </div>
               <div className="space-y-2">
                 {categories.map((category) => (
                   <div key={category} className="flex items-center space-x-2">
                     <Checkbox
                       id={category}
-                      checked={selectedCategory === category}
-                      onCheckedChange={() => setSelectedCategory(category)}
+                      checked={selectedCategories.includes(category)}
+                      onCheckedChange={() => toggleFilter(selectedCategories, setSelectedCategories, category)}
                     />
-                    <label htmlFor={category} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                    <label htmlFor={category} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer">
                       {category}
                     </label>
                   </div>
@@ -218,16 +233,21 @@ export default function Gallery() {
 
             {/* Style Filter */}
             <div>
-              <h4 className="font-medium mb-3">Style</h4>
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="font-medium">Style</h4>
+                {selectedStyles.length > 0 && (
+                  <span className="text-xs text-muted-foreground">({selectedStyles.length})</span>
+                )}
+              </div>
               <div className="space-y-2">
                 {styles.map((style) => (
                   <div key={style} className="flex items-center space-x-2">
                     <Checkbox
                       id={style}
-                      checked={selectedStyle === style}
-                      onCheckedChange={() => setSelectedStyle(style)}
+                      checked={selectedStyles.includes(style)}
+                      onCheckedChange={() => toggleFilter(selectedStyles, setSelectedStyles, style)}
                     />
-                    <label htmlFor={style} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                    <label htmlFor={style} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer">
                       {style}
                     </label>
                   </div>
