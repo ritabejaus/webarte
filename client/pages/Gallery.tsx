@@ -301,6 +301,45 @@ export default function Gallery() {
 
           {/* Main Content */}
           <main className="flex-1">
+            {/* Active Filters */}
+            {activeFiltersCount > 0 && (
+              <div className="mb-6">
+                <div className="flex items-center gap-2 text-sm">
+                  <span className="font-medium">Active filters:</span>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedCategories.map((category) => (
+                      <Badge key={category} variant="secondary" className="cursor-pointer" onClick={() => toggleFilter(selectedCategories, setSelectedCategories, category)}>
+                        {category} ×
+                      </Badge>
+                    ))}
+                    {selectedStyles.map((style) => (
+                      <Badge key={style} variant="secondary" className="cursor-pointer" onClick={() => toggleFilter(selectedStyles, setSelectedStyles, style)}>
+                        {style} ×
+                      </Badge>
+                    ))}
+                    {selectedSizes.map((size) => (
+                      <Badge key={size} variant="secondary" className="cursor-pointer" onClick={() => toggleFilter(selectedSizes, setSelectedSizes, size)}>
+                        {size} ×
+                      </Badge>
+                    ))}
+                    {(priceRange[0] > 0 || priceRange[1] < 300) && (
+                      <Badge variant="secondary" className="cursor-pointer" onClick={() => setPriceRange([0, 300])}>
+                        ${priceRange[0]} - ${priceRange[1]} ×
+                      </Badge>
+                    )}
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={clearAllFilters}
+                    className="text-xs text-muted-foreground hover:text-foreground ml-2"
+                  >
+                    Clear all
+                  </Button>
+                </div>
+              </div>
+            )}
+
             {/* Header with sort and view options */}
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-4">
