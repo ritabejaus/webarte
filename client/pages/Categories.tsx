@@ -118,8 +118,8 @@ export default function Categories() {
               <Link to="/categories" className="transition-colors hover:text-foreground/80 text-foreground">
                 Categories
               </Link>
-              <Link to="/artists" className="transition-colors hover:text-foreground/80 text-foreground/60">
-                Artists
+              <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+                About Me
               </Link>
               <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
                 About
@@ -166,17 +166,17 @@ export default function Categories() {
 
         {/* Page Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold tracking-tight mb-4">Art Categories</h1>
+          <h1 className="text-4xl font-bold tracking-tight mb-4">My Art Collection</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover our curated collection organized by artistic styles and themes. 
-            Each category represents a unique way of seeing and interpreting the world.
+            Explore my artwork organized by style and theme.
+            Each category represents a different aspect of my creative journey and artistic vision.
           </p>
         </div>
 
         {/* Featured Categories */}
         <section className="mb-16">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold">Featured Categories</h2>
+            <h2 className="text-2xl font-bold">Featured Collections</h2>
             <Button variant="outline" asChild>
               <Link to="/gallery">
                 Browse All Artworks
@@ -284,10 +284,10 @@ export default function Categories() {
 
         {/* Call to Action */}
         <section className="text-center py-16">
-          <h2 className="text-3xl font-bold mb-4">Can't Find What You're Looking For?</h2>
+          <h2 className="text-3xl font-bold mb-4">Looking for Something Specific?</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Our collection is constantly growing. Browse our complete gallery or get in touch with our curators 
-            for personalized recommendations.
+            My collection is constantly evolving. Browse my complete gallery or get in touch
+            for custom commissions and personalized artwork.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
@@ -298,7 +298,7 @@ export default function Categories() {
             </Button>
             <Button variant="outline" size="lg" asChild>
               <Link to="/about">
-                Contact Curators
+                Contact Me
               </Link>
             </Button>
           </div>
