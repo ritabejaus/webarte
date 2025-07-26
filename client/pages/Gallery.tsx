@@ -13,8 +13,7 @@ const artworks = [
   {
     id: 1,
     title: "Figuras en Crecimiento",
-    price: 89,
-    originalPrice: 120,
+    price: 10,
     image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F8148f42d866e42e9bc0246b3905bc629?format=webp&width=800",
     rating: 4.8,
     reviews: 124,
@@ -25,7 +24,7 @@ const artworks = [
   {
     id: 2,
     title: "Hoy Su Voy a Ti Ch",
-    price: 145,
+    price: 15,
     image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F855c73c7656048769aaec1b94a947d01?format=webp&width=800",
     rating: 4.9,
     reviews: 89,
@@ -36,8 +35,7 @@ const artworks = [
   {
     id: 3,
     title: "Formas en Movimiento",
-    price: 67,
-    originalPrice: 85,
+    price: 5,
     image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2Ff3c023de9baf4aaf81932878813b37cc?format=webp&width=800",
     rating: 4.7,
     reviews: 156,
@@ -48,7 +46,7 @@ const artworks = [
   {
     id: 4,
     title: "Jardín Interior",
-    price: 199,
+    price: 15,
     image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F79a2f69167354bdcada4447668a484af?format=webp&width=800",
     rating: 4.9,
     reviews: 67,
@@ -59,7 +57,7 @@ const artworks = [
   {
     id: 5,
     title: "Paisaje Digital",
-    price: 78,
+    price: 10,
     image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F2baac664c2ae45b498d8e7bb8c4e7169?format=webp&width=800",
     rating: 4.6,
     reviews: 203,
@@ -70,8 +68,7 @@ const artworks = [
   {
     id: 6,
     title: "Tiempo y Espacio",
-    price: 156,
-    originalPrice: 180,
+    price: 10,
     image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F9e8f97e5509e4cefb906f378a3eb0018?format=webp&width=800",
     rating: 4.8,
     reviews: 91,
@@ -82,7 +79,7 @@ const artworks = [
   {
     id: 7,
     title: "Reflexiones Cotidianas",
-    price: 134,
+    price: 15,
     image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F84a2b5094b2c4b7699c91669f85338ec?format=webp&width=800",
     rating: 4.7,
     reviews: 58,
@@ -93,7 +90,7 @@ const artworks = [
   {
     id: 8,
     title: "Estación de Rita",
-    price: 112,
+    price: 10,
     image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F4d1395f370344d069d365a30f5ca6262?format=webp&width=800",
     rating: 4.5,
     reviews: 73,
