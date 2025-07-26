@@ -257,16 +257,21 @@ export default function Gallery() {
 
             {/* Size Filter */}
             <div>
-              <h4 className="font-medium mb-3">Size</h4>
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="font-medium">Size</h4>
+                {selectedSizes.length > 0 && (
+                  <span className="text-xs text-muted-foreground">({selectedSizes.length})</span>
+                )}
+              </div>
               <div className="space-y-2">
                 {sizes.map((size) => (
                   <div key={size} className="flex items-center space-x-2">
                     <Checkbox
                       id={size}
-                      checked={selectedSize === size}
-                      onCheckedChange={() => setSelectedSize(size)}
+                      checked={selectedSizes.includes(size)}
+                      onCheckedChange={() => toggleFilter(selectedSizes, setSelectedSizes, size)}
                     />
-                    <label htmlFor={size} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                    <label htmlFor={size} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer">
                       {size}
                     </label>
                   </div>
