@@ -31,9 +31,9 @@ const categories = [
     image: "/placeholder.svg",
     color: "from-blue-500 to-cyan-500",
     examples: [
-      { id: 4, title: "Urban Dreams", artist: "Alex Chen", image: "/placeholder.svg", price: 145 },
-      { id: 5, title: "Street Life", artist: "Maria Lopez", image: "/placeholder.svg", price: 92 },
-      { id: 6, title: "City Lights", artist: "David Kim", image: "/placeholder.svg", price: 158 }
+      { id: 4, title: "Urban Dreams", image: "/placeholder.svg", price: 145 },
+      { id: 5, title: "Street Life", image: "/placeholder.svg", price: 92 },
+      { id: 6, title: "City Lights", image: "/placeholder.svg", price: 158 }
     ]
   },
   {
@@ -46,9 +46,9 @@ const categories = [
     image: "/placeholder.svg",
     color: "from-green-500 to-emerald-500",
     examples: [
-      { id: 7, title: "Botanical Serenity", artist: "Maya Rodriguez", image: "/placeholder.svg", price: 67 },
-      { id: 8, title: "Forest Path", artist: "Emma Wilson", image: "/placeholder.svg", price: 89 },
-      { id: 9, title: "Wildflower Field", artist: "Jake Thompson", image: "/placeholder.svg", price: 76 }
+      { id: 7, title: "Botanical Serenity", image: "/placeholder.svg", price: 67 },
+      { id: 8, title: "Forest Path", image: "/placeholder.svg", price: 89 },
+      { id: 9, title: "Wildflower Field", image: "/placeholder.svg", price: 76 }
     ]
   },
   {
@@ -61,9 +61,9 @@ const categories = [
     image: "/placeholder.svg",
     color: "from-orange-500 to-red-500",
     examples: [
-      { id: 10, title: "Midnight Reflection", artist: "James Park", image: "/placeholder.svg", price: 199 },
-      { id: 11, title: "Mountain Vista", artist: "Sarah Johnson", image: "/placeholder.svg", price: 134 },
-      { id: 12, title: "Ocean Sunset", artist: "Carlos Rivera", image: "/placeholder.svg", price: 167 }
+      { id: 10, title: "Midnight Reflection", image: "/placeholder.svg", price: 199 },
+      { id: 11, title: "Mountain Vista", image: "/placeholder.svg", price: 134 },
+      { id: 12, title: "Ocean Sunset", image: "/placeholder.svg", price: 167 }
     ]
   },
   {
@@ -76,9 +76,9 @@ const categories = [
     image: "/placeholder.svg",
     color: "from-violet-500 to-purple-500",
     examples: [
-      { id: 13, title: "Digital Waves", artist: "Sofia Kim", image: "/placeholder.svg", price: 78 },
-      { id: 14, title: "Cyber Dreams", artist: "Alex Park", image: "/placeholder.svg", price: 95 },
-      { id: 15, title: "Neon Future", artist: "Lisa Chang", image: "/placeholder.svg", price: 112 }
+      { id: 13, title: "Digital Waves", image: "/placeholder.svg", price: 78 },
+      { id: 14, title: "Cyber Dreams", image: "/placeholder.svg", price: 95 },
+      { id: 15, title: "Neon Future", image: "/placeholder.svg", price: 112 }
     ]
   },
   {
@@ -91,9 +91,9 @@ const categories = [
     image: "/placeholder.svg",
     color: "from-rose-500 to-pink-500",
     examples: [
-      { id: 16, title: "Portrait in Blue", artist: "Marcus Johnson", image: "/placeholder.svg", price: 156 },
-      { id: 17, title: "Modern Face", artist: "Nina Garcia", image: "/placeholder.svg", price: 123 },
-      { id: 18, title: "Expression Study", artist: "Tom Anderson", image: "/placeholder.svg", price: 89 }
+      { id: 16, title: "Portrait in Blue", image: "/placeholder.svg", price: 156 },
+      { id: 17, title: "Modern Face", image: "/placeholder.svg", price: 123 },
+      { id: 18, title: "Expression Study", image: "/placeholder.svg", price: 89 }
     ]
   }
 ];
