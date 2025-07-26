@@ -6,7 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Separator } from "@/components/ui/separator";
 import { ShoppingCart, Heart, Search, Minus, Plus, X, Truck, ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useCart } from "../contexts/CartContext";
 
 // Sample cart data
 const initialCartItems = [
