@@ -298,7 +298,7 @@ export default function Cart() {
                       <Truck className="h-5 w-5 text-accent" />
                       <div>
                         <p className="text-sm font-medium">Free Shipping</p>
-                        <p className="text-xs text-muted-foreground">On orders over $75</p>
+                        <p className="text-xs text-muted-foreground">On orders over $25</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
