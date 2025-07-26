@@ -52,7 +52,7 @@ export default function Cart() {
   const savings = cartItems.reduce((sum, item) => 
     sum + ((item.originalPrice || item.price) - item.price) * item.quantity, 0
   );
-  const shipping = subtotal > 75 ? 0 : 9.99;
+  const shipping = subtotal > 25 ? 0 : 2.99;
   const tax = subtotal * 0.08; // 8% tax
   const total = subtotal + shipping + tax;
 
