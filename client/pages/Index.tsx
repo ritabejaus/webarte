@@ -243,7 +243,15 @@ export default function Index() {
                           </span>
                         )}
                       </div>
-                      <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                      <Button
+                        size="sm"
+                        className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          alert(`¡Agregado al carrito!\n\n${artwork.title}\nCategoría: ${artwork.category}\nPrecio: $${artwork.price}`);
+                        }}
+                      >
                         Add to Cart
                       </Button>
                     </div>
