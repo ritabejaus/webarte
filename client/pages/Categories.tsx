@@ -46,9 +46,9 @@ const categories = [
     image: "/placeholder.svg",
     color: "from-green-500 to-emerald-500",
     examples: [
-      { id: 7, title: "Botanical Serenity", image: "/placeholder.svg", price: 67 },
-      { id: 8, title: "Forest Path", image: "/placeholder.svg", price: 89 },
-      { id: 9, title: "Wildflower Field", image: "/placeholder.svg", price: 76 }
+      { id: 4, title: "Jardín Interior", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F79a2f69167354bdcada4447668a484af?format=webp&width=800", price: 199 },
+      { id: 5, title: "Paisaje Digital", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F2baac664c2ae45b498d8e7bb8c4e7169?format=webp&width=800", price: 78 },
+      { id: 8, title: "Estación de Rita", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F4d1395f370344d069d365a30f5ca6262?format=webp&width=800", price: 112 }
     ]
   },
   {
