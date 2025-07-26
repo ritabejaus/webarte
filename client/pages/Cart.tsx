@@ -12,22 +12,22 @@ import { useState } from "react";
 const initialCartItems = [
   {
     id: 1,
-    title: "Abstract Horizon",
+    title: "Figuras en Crecimiento",
     price: 89,
     originalPrice: 120,
-    image: "/placeholder.svg",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F8148f42d866e42e9bc0246b3905bc629?format=webp&width=800",
     size: "Medium (18\" x 24\")",
     frame: "Black Frame",
     quantity: 1
   },
   {
     id: 2,
-    title: "Urban Dreams",
-    price: 145,
-    image: "/placeholder.svg",
+    title: "Tiempo y Espacio",
+    price: 156,
+    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F9e8f97e5509e4cefb906f378a3eb0018?format=webp&width=800",
     size: "Large (24\" x 32\")",
     frame: "No Frame",
-    quantity: 2
+    quantity: 1
   }
 ];
 
