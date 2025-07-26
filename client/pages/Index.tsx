@@ -201,7 +201,8 @@ export default function Index() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredArtworks.map((artwork) => (
-              <Card key={artwork.id} className="group cursor-pointer hover:shadow-xl transition-all duration-300">
+              <Link key={artwork.id} to={`/product/${artwork.id}`}>
+                <Card className="group cursor-pointer hover:shadow-xl transition-all duration-300">
                 <CardContent className="p-0">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-t-lg">
                     <img
@@ -252,7 +253,8 @@ export default function Index() {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
