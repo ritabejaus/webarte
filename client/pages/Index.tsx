@@ -1,7 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, ShoppingCart, Heart, Search, Filter, ArrowRight } from "lucide-react";
+import {
+  Star,
+  ShoppingCart,
+  Heart,
+  Search,
+  Filter,
+  ArrowRight,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 // Sample data for featured artworks
@@ -10,42 +17,46 @@ const featuredArtworks = [
     id: 1,
     title: "Figuras en Crecimiento",
     price: 10,
-    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F8148f42d866e42e9bc0246b3905bc629?format=webp&width=800",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F8148f42d866e42e9bc0246b3905bc629?format=webp&width=800",
     rating: 4.8,
     reviews: 124,
     category: "Abstract",
-    featured: true
+    featured: true,
   },
   {
     id: 2,
     title: "Hoy Su Voy a Ti Ch",
     price: 15,
-    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F855c73c7656048769aaec1b94a947d01?format=webp&width=800",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F855c73c7656048769aaec1b94a947d01?format=webp&width=800",
     rating: 4.9,
     reviews: 89,
     category: "Abstract",
-    featured: true
+    featured: true,
   },
   {
     id: 3,
     title: "Jardín Interior",
     price: 15,
-    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F79a2f69167354bdcada4447668a484af?format=webp&width=800",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F79a2f69167354bdcada4447668a484af?format=webp&width=800",
     rating: 4.9,
     reviews: 67,
     category: "Nature",
-    featured: true
+    featured: true,
   },
   {
     id: 4,
     title: "Tiempo y Espacio",
     price: 10,
-    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F9e8f97e5509e4cefb906f378a3eb0018?format=webp&width=800",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F9e8f97e5509e4cefb906f378a3eb0018?format=webp&width=800",
     rating: 4.8,
     reviews: 91,
     category: "Abstract",
-    featured: true
-  }
+    featured: true,
+  },
 ];
 
 const categories = [
@@ -54,7 +65,7 @@ const categories = [
   { name: "Nature", count: 189, image: "/placeholder.svg" },
   { name: "Portraits", count: 167, image: "/placeholder.svg" },
   { name: "Landscape", count: 298, image: "/placeholder.svg" },
-  { name: "Digital Art", count: 324, image: "/placeholder.svg" }
+  { name: "Digital Art", count: 324, image: "/placeholder.svg" },
 ];
 
 export default function Index() {
@@ -66,21 +77,37 @@ export default function Index() {
           <div className="mr-4 hidden md:flex">
             <Link to="/" className="mr-6 flex items-center space-x-2">
               <div className="h-8 w-8 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-lg">A</span>
+                <span className="text-accent-foreground font-bold text-lg">
+                  A
+                </span>
               </div>
-              <span className="hidden font-bold sm:inline-block text-xl">Artistry</span>
+              <span className="hidden font-bold sm:inline-block text-xl">
+                Artistry
+              </span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
-              <Link to="/gallery" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/gallery"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 Gallery
               </Link>
-              <Link to="/categories" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/categories"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 Categories
               </Link>
-              <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/about"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 About Me
               </Link>
-              <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/about"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 About
               </Link>
             </nav>
@@ -124,14 +151,18 @@ export default function Index() {
             </Badge>
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
               Welcome to My
-              <span className="text-accent"> Art Gallery </span>
-              & Prints
+              <span className="text-accent"> Art Gallery </span>& Prints
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Transform your space with my original artwork and prints. From abstract masterpieces to detailed studies, each piece tells a unique story.
+              Transform your space with my original artwork and prints. From
+              abstract masterpieces to detailed studies, each piece tells a
+              unique story.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Button
+                size="lg"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground"
+              >
                 Explore Gallery
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -149,8 +180,12 @@ export default function Index() {
         <div className="container">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight">Browse My Collections</h2>
-              <p className="text-muted-foreground mt-2">Explore different styles and themes in my work</p>
+              <h2 className="text-3xl font-bold tracking-tight">
+                Browse My Collections
+              </h2>
+              <p className="text-muted-foreground mt-2">
+                Explore different styles and themes in my work
+              </p>
             </div>
             <Button variant="outline">
               View All Categories
@@ -159,7 +194,10 @@ export default function Index() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {categories.map((category) => (
-              <Card key={category.name} className="group cursor-pointer hover:shadow-lg transition-all duration-300">
+              <Card
+                key={category.name}
+                className="group cursor-pointer hover:shadow-lg transition-all duration-300"
+              >
                 <CardContent className="p-4">
                   <div className="aspect-square bg-muted rounded-lg mb-3 overflow-hidden">
                     <img
@@ -169,7 +207,9 @@ export default function Index() {
                     />
                   </div>
                   <h3 className="font-semibold text-sm">{category.name}</h3>
-                  <p className="text-xs text-muted-foreground">{category.count} prints</p>
+                  <p className="text-xs text-muted-foreground">
+                    {category.count} prints
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -182,8 +222,12 @@ export default function Index() {
         <div className="container">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight">Featured Artworks</h2>
-              <p className="text-muted-foreground mt-2">Recent pieces and popular prints from my collection</p>
+              <h2 className="text-3xl font-bold tracking-tight">
+                Featured Artworks
+              </h2>
+              <p className="text-muted-foreground mt-2">
+                Recent pieces and popular prints from my collection
+              </p>
             </div>
             <div className="flex items-center gap-2">
               <Button variant="outline" size="icon">
@@ -199,64 +243,78 @@ export default function Index() {
             {featuredArtworks.map((artwork) => (
               <Link key={artwork.id} to={`/product/${artwork.id}`}>
                 <Card className="group cursor-pointer hover:shadow-xl transition-all duration-300">
-                <CardContent className="p-0">
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-t-lg">
-                    <img
-                      src={artwork.image}
-                      alt={artwork.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute top-3 right-3">
-                      <Button size="icon" variant="secondary" className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <Heart className="h-4 w-4" />
-                      </Button>
-                    </div>
-                    {artwork.originalPrice && (
-                      <Badge className="absolute top-3 left-3 bg-accent text-accent-foreground">
-                        Sale
-                      </Badge>
-                    )}
-                  </div>
-                  <div className="p-4">
-                    <div className="flex items-start justify-between mb-2">
-                      <div className="min-w-0 flex-1">
-                        <h3 className="font-semibold text-sm truncate">{artwork.title}</h3>
-                        <p className="text-xs text-muted-foreground">Original Artwork</p>
+                  <CardContent className="p-0">
+                    <div className="relative aspect-[4/5] overflow-hidden rounded-t-lg">
+                      <img
+                        src={artwork.image}
+                        alt={artwork.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute top-3 right-3">
+                        <Button
+                          size="icon"
+                          variant="secondary"
+                          className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
+                        >
+                          <Heart className="h-4 w-4" />
+                        </Button>
                       </div>
-                      <Badge variant="outline" className="text-xs ml-2">
-                        {artwork.category}
-                      </Badge>
+                      {artwork.originalPrice && (
+                        <Badge className="absolute top-3 left-3 bg-accent text-accent-foreground">
+                          Sale
+                        </Badge>
+                      )}
                     </div>
-                    <div className="flex items-center gap-1 mb-3">
-                      <div className="flex items-center">
-                        <Star className="h-3 w-3 fill-accent text-accent" />
-                        <span className="text-xs ml-1">{artwork.rating}</span>
+                    <div className="p-4">
+                      <div className="flex items-start justify-between mb-2">
+                        <div className="min-w-0 flex-1">
+                          <h3 className="font-semibold text-sm truncate">
+                            {artwork.title}
+                          </h3>
+                          <p className="text-xs text-muted-foreground">
+                            Original Artwork
+                          </p>
+                        </div>
+                        <Badge variant="outline" className="text-xs ml-2">
+                          {artwork.category}
+                        </Badge>
                       </div>
-                      <span className="text-xs text-muted-foreground">({artwork.reviews})</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <span className="font-bold text-lg">${artwork.price}</span>
-                        {artwork.originalPrice && (
-                          <span className="text-sm text-muted-foreground line-through">
-                            ${artwork.originalPrice}
+                      <div className="flex items-center gap-1 mb-3">
+                        <div className="flex items-center">
+                          <Star className="h-3 w-3 fill-accent text-accent" />
+                          <span className="text-xs ml-1">{artwork.rating}</span>
+                        </div>
+                        <span className="text-xs text-muted-foreground">
+                          ({artwork.reviews})
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <span className="font-bold text-lg">
+                            ${artwork.price}
                           </span>
-                        )}
+                          {artwork.originalPrice && (
+                            <span className="text-sm text-muted-foreground line-through">
+                              ${artwork.originalPrice}
+                            </span>
+                          )}
+                        </div>
+                        <Button
+                          size="sm"
+                          className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            alert(
+                              `¡Agregado al carrito!\n\n${artwork.title}\nCategoría: ${artwork.category}\nPrecio: $${artwork.price}`,
+                            );
+                          }}
+                        >
+                          Add to Cart
+                        </Button>
                       </div>
-                      <Button
-                        size="sm"
-                        className="bg-accent hover:bg-accent/90 text-accent-foreground"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          alert(`¡Agregado al carrito!\n\n${artwork.title}\nCategoría: ${artwork.category}\nPrecio: $${artwork.price}`);
-                        }}
-                      >
-                        Add to Cart
-                      </Button>
                     </div>
-                  </div>
-                </CardContent>
+                  </CardContent>
                 </Card>
               </Link>
             ))}
@@ -270,7 +328,8 @@ export default function Index() {
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight">Stay Inspired</h2>
             <p className="mt-4 text-muted-foreground">
-              Get updates on new artworks, behind-the-scenes content, and exclusive offers delivered to your inbox.
+              Get updates on new artworks, behind-the-scenes content, and
+              exclusive offers delivered to your inbox.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
@@ -293,39 +352,90 @@ export default function Index() {
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <div className="h-8 w-8 bg-accent rounded-lg flex items-center justify-center">
-                  <span className="text-accent-foreground font-bold text-lg">A</span>
+                  <span className="text-accent-foreground font-bold text-lg">
+                    A
+                  </span>
                 </div>
                 <span className="font-bold text-xl">Artistry</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Discover and collect extraordinary art from talented artists around the world.
+                Discover and collect extraordinary art from talented artists
+                around the world.
               </p>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Shop</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link to="/gallery" className="hover:text-foreground">All Artworks</Link></li>
-                <li><Link to="/categories" className="hover:text-foreground">Categories</Link></li>
-                <li><Link to="/artists" className="hover:text-foreground">Artists</Link></li>
-                <li><Link to="/new-arrivals" className="hover:text-foreground">New Arrivals</Link></li>
+                <li>
+                  <Link to="/gallery" className="hover:text-foreground">
+                    All Artworks
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/categories" className="hover:text-foreground">
+                    Categories
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/artists" className="hover:text-foreground">
+                    Artists
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/new-arrivals" className="hover:text-foreground">
+                    New Arrivals
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link to="/help" className="hover:text-foreground">Help Center</Link></li>
-                <li><Link to="/shipping" className="hover:text-foreground">Shipping Info</Link></li>
-                <li><Link to="/returns" className="hover:text-foreground">Returns</Link></li>
-                <li><Link to="/contact" className="hover:text-foreground">Contact Us</Link></li>
+                <li>
+                  <Link to="/help" className="hover:text-foreground">
+                    Help Center
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/shipping" className="hover:text-foreground">
+                    Shipping Info
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/returns" className="hover:text-foreground">
+                    Returns
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="hover:text-foreground">
+                    Contact Us
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Connect</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-foreground">Instagram</a></li>
-                <li><a href="#" className="hover:text-foreground">Pinterest</a></li>
-                <li><a href="#" className="hover:text-foreground">Twitter</a></li>
-                <li><a href="#" className="hover:text-foreground">Facebook</a></li>
+                <li>
+                  <a href="#" className="hover:text-foreground">
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-foreground">
+                    Pinterest
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-foreground">
+                    Twitter
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-foreground">
+                    Facebook
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

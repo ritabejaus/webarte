@@ -2,18 +2,40 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
-import { ShoppingCart, Heart, Search, Minus, Plus, X, Truck, ArrowLeft, ArrowRight } from "lucide-react";
+import {
+  ShoppingCart,
+  Heart,
+  Search,
+  Minus,
+  Plus,
+  X,
+  Truck,
+  ArrowLeft,
+  ArrowRight,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { useCart } from "../contexts/CartContext";
 
 export default function Cart() {
-  const { cartItems, updateQuantity, removeFromCart, getCartItemsCount } = useCart();
+  const { cartItems, updateQuantity, removeFromCart, getCartItemsCount } =
+    useCart();
 
-  const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  const savings = cartItems.reduce((sum, item) => 
-    sum + ((item.originalPrice || item.price) - item.price) * item.quantity, 0
+  const subtotal = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0,
+  );
+  const savings = cartItems.reduce(
+    (sum, item) =>
+      sum + ((item.originalPrice || item.price) - item.price) * item.quantity,
+    0,
   );
   const shipping = subtotal > 25 ? 0 : 2.99;
   const tax = subtotal * 0.08; // 8% tax
@@ -27,21 +49,37 @@ export default function Cart() {
           <div className="mr-4 hidden md:flex">
             <Link to="/" className="mr-6 flex items-center space-x-2">
               <div className="h-8 w-8 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-lg">A</span>
+                <span className="text-accent-foreground font-bold text-lg">
+                  A
+                </span>
               </div>
-              <span className="hidden font-bold sm:inline-block text-xl">Artistry</span>
+              <span className="hidden font-bold sm:inline-block text-xl">
+                Artistry
+              </span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
-              <Link to="/gallery" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/gallery"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 Gallery
               </Link>
-              <Link to="/categories" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/categories"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 Categories
               </Link>
-              <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/about"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 About Me
               </Link>
-              <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/about"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 About
               </Link>
             </nav>
@@ -79,7 +117,9 @@ export default function Cart() {
       <div className="container py-8">
         {/* Breadcrumb */}
         <div className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
-          <Link to="/" className="hover:text-foreground">Home</Link>
+          <Link to="/" className="hover:text-foreground">
+            Home
+          </Link>
           <span>/</span>
           <span className="text-foreground">Shopping Cart</span>
         </div>
@@ -94,7 +134,11 @@ export default function Cart() {
             <p className="text-muted-foreground mb-8">
               Looks like you haven't added any artwork to your cart yet.
             </p>
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Button
+              asChild
+              size="lg"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground"
+            >
               <Link to="/gallery">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Continue Shopping
@@ -108,7 +152,9 @@ export default function Cart() {
             <div className="lg:col-span-2 space-y-4">
               <div className="flex items-center justify-between">
                 <h1 className="text-2xl font-bold">Shopping Cart</h1>
-                <span className="text-muted-foreground">{cartItems.length} item{cartItems.length !== 1 ? 's' : ''}</span>
+                <span className="text-muted-foreground">
+                  {cartItems.length} item{cartItems.length !== 1 ? "s" : ""}
+                </span>
               </div>
 
               {cartItems.map((item) => (
@@ -125,11 +171,19 @@ export default function Cart() {
                       <div className="flex-1 min-w-0">
                         <div className="flex items-start justify-between">
                           <div className="min-w-0 flex-1">
-                            <h3 className="font-semibold truncate">{item.title}</h3>
-                            <p className="text-sm text-muted-foreground">Original Artwork</p>
+                            <h3 className="font-semibold truncate">
+                              {item.title}
+                            </h3>
+                            <p className="text-sm text-muted-foreground">
+                              Original Artwork
+                            </p>
                             <div className="mt-1 space-y-1">
-                              <p className="text-xs text-muted-foreground">Size: {item.size}</p>
-                              <p className="text-xs text-muted-foreground">Frame: {item.frame}</p>
+                              <p className="text-xs text-muted-foreground">
+                                Size: {item.size}
+                              </p>
+                              <p className="text-xs text-muted-foreground">
+                                Frame: {item.frame}
+                              </p>
                             </div>
                           </div>
                           <Button
@@ -155,16 +209,22 @@ export default function Cart() {
                               variant="outline"
                               size="icon"
                               className="h-8 w-8"
-                              onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                              onClick={() =>
+                                updateQuantity(item.id, item.quantity - 1)
+                              }
                             >
                               <Minus className="h-3 w-3" />
                             </Button>
-                            <span className="w-8 text-center text-sm">{item.quantity}</span>
+                            <span className="w-8 text-center text-sm">
+                              {item.quantity}
+                            </span>
                             <Button
                               variant="outline"
                               size="icon"
                               className="h-8 w-8"
-                              onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                              onClick={() =>
+                                updateQuantity(item.id, item.quantity + 1)
+                              }
                             >
                               <Plus className="h-3 w-3" />
                             </Button>
@@ -191,7 +251,7 @@ export default function Cart() {
               <Card>
                 <CardContent className="p-6">
                   <h2 className="text-lg font-semibold mb-4">Order Summary</h2>
-                  
+
                   <div className="space-y-3">
                     <div className="flex justify-between text-sm">
                       <span>Subtotal</span>
@@ -206,7 +266,11 @@ export default function Cart() {
                     <div className="flex justify-between text-sm">
                       <span className="flex items-center gap-1">
                         Shipping
-                        {shipping === 0 && <Badge variant="outline" className="text-xs">Free</Badge>}
+                        {shipping === 0 && (
+                          <Badge variant="outline" className="text-xs">
+                            Free
+                          </Badge>
+                        )}
                       </span>
                       <span>${shipping.toFixed(2)}</span>
                     </div>
@@ -225,12 +289,18 @@ export default function Cart() {
                     <div className="mt-4 p-3 bg-muted rounded-lg">
                       <div className="flex items-center gap-2 text-sm">
                         <Truck className="h-4 w-4 text-accent" />
-                        <span>Add ${(25 - subtotal).toFixed(2)} more for free shipping!</span>
+                        <span>
+                          Add ${(25 - subtotal).toFixed(2)} more for free
+                          shipping!
+                        </span>
                       </div>
                     </div>
                   )}
 
-                  <Button className="w-full mt-6 bg-accent hover:bg-accent/90 text-accent-foreground" size="lg">
+                  <Button
+                    className="w-full mt-6 bg-accent hover:bg-accent/90 text-accent-foreground"
+                    size="lg"
+                  >
                     Proceed to Checkout
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -261,21 +331,27 @@ export default function Cart() {
                       <Truck className="h-5 w-5 text-accent" />
                       <div>
                         <p className="text-sm font-medium">Free Shipping</p>
-                        <p className="text-xs text-muted-foreground">On orders over $25</p>
+                        <p className="text-xs text-muted-foreground">
+                          On orders over $25
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
                       <ShoppingCart className="h-5 w-5 text-accent" />
                       <div>
                         <p className="text-sm font-medium">Easy Returns</p>
-                        <p className="text-xs text-muted-foreground">30-day return policy</p>
+                        <p className="text-xs text-muted-foreground">
+                          30-day return policy
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
                       <Heart className="h-5 w-5 text-accent" />
                       <div>
                         <p className="text-sm font-medium">Curated Selection</p>
-                        <p className="text-xs text-muted-foreground">Hand-picked by experts</p>
+                        <p className="text-xs text-muted-foreground">
+                          Hand-picked by experts
+                        </p>
                       </div>
                     </div>
                   </div>

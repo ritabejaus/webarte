@@ -1,7 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ShoppingCart, Heart, Search, ArrowRight, Palette, Camera, Leaf, Mountain, Monitor, User } from "lucide-react";
+import {
+  ShoppingCart,
+  Heart,
+  Search,
+  ArrowRight,
+  Palette,
+  Camera,
+  Leaf,
+  Mountain,
+  Monitor,
+  User,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 // Categories data with detailed information
@@ -9,22 +20,42 @@ const categories = [
   {
     id: "abstract",
     name: "Abstract",
-    description: "Non-representational art that uses color, form, and line to create compositions independent of visual references.",
+    description:
+      "Non-representational art that uses color, form, and line to create compositions independent of visual references.",
     icon: Palette,
     artworkCount: 234,
     featured: true,
     image: "/placeholder.svg",
     color: "from-purple-500 to-pink-500",
     examples: [
-      { id: 1, title: "Figuras en Crecimiento", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F8148f42d866e42e9bc0246b3905bc629?format=webp&width=800", price: 10 },
-      { id: 2, title: "Hoy Su Voy a Ti Ch", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F855c73c7656048769aaec1b94a947d01?format=webp&width=800", price: 15 },
-      { id: 6, title: "Tiempo y Espacio", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F9e8f97e5509e4cefb906f378a3eb0018?format=webp&width=800", price: 10 }
-    ]
+      {
+        id: 1,
+        title: "Figuras en Crecimiento",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F8148f42d866e42e9bc0246b3905bc629?format=webp&width=800",
+        price: 10,
+      },
+      {
+        id: 2,
+        title: "Hoy Su Voy a Ti Ch",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F855c73c7656048769aaec1b94a947d01?format=webp&width=800",
+        price: 15,
+      },
+      {
+        id: 6,
+        title: "Tiempo y Espacio",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F9e8f97e5509e4cefb906f378a3eb0018?format=webp&width=800",
+        price: 10,
+      },
+    ],
   },
   {
     id: "photography",
     name: "Photography",
-    description: "Captured moments and artistic vision through the lens, from landscapes to street photography.",
+    description:
+      "Captured moments and artistic vision through the lens, from landscapes to street photography.",
     icon: Camera,
     artworkCount: 456,
     featured: true,
@@ -33,43 +64,74 @@ const categories = [
     examples: [
       { id: 4, title: "Urban Dreams", image: "/placeholder.svg", price: 15 },
       { id: 5, title: "Street Life", image: "/placeholder.svg", price: 10 },
-      { id: 6, title: "City Lights", image: "/placeholder.svg", price: 15 }
-    ]
+      { id: 6, title: "City Lights", image: "/placeholder.svg", price: 15 },
+    ],
   },
   {
     id: "nature",
     name: "Nature",
-    description: "Beautiful representations of the natural world, including botanical art and wildlife illustrations.",
+    description:
+      "Beautiful representations of the natural world, including botanical art and wildlife illustrations.",
     icon: Leaf,
     artworkCount: 189,
     featured: false,
     image: "/placeholder.svg",
     color: "from-green-500 to-emerald-500",
     examples: [
-      { id: 4, title: "Jardín Interior", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F79a2f69167354bdcada4447668a484af?format=webp&width=800", price: 15 },
-      { id: 5, title: "Paisaje Digital", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F2baac664c2ae45b498d8e7bb8c4e7169?format=webp&width=800", price: 10 },
-      { id: 8, title: "Estación de Rita", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F4d1395f370344d069d365a30f5ca6262?format=webp&width=800", price: 10 }
-    ]
+      {
+        id: 4,
+        title: "Jardín Interior",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F79a2f69167354bdcada4447668a484af?format=webp&width=800",
+        price: 15,
+      },
+      {
+        id: 5,
+        title: "Paisaje Digital",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F2baac664c2ae45b498d8e7bb8c4e7169?format=webp&width=800",
+        price: 10,
+      },
+      {
+        id: 8,
+        title: "Estación de Rita",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F4d1395f370344d069d365a30f5ca6262?format=webp&width=800",
+        price: 10,
+      },
+    ],
   },
   {
     id: "landscape",
     name: "Landscape",
-    description: "Stunning vistas and scenic views that capture the beauty of our natural environment.",
+    description:
+      "Stunning vistas and scenic views that capture the beauty of our natural environment.",
     icon: Mountain,
     artworkCount: 298,
     featured: true,
     image: "/placeholder.svg",
     color: "from-orange-500 to-red-500",
     examples: [
-      { id: 10, title: "Midnight Reflection", image: "/placeholder.svg", price: 199 },
-      { id: 11, title: "Mountain Vista", image: "/placeholder.svg", price: 134 },
-      { id: 12, title: "Ocean Sunset", image: "/placeholder.svg", price: 167 }
-    ]
+      {
+        id: 10,
+        title: "Midnight Reflection",
+        image: "/placeholder.svg",
+        price: 199,
+      },
+      {
+        id: 11,
+        title: "Mountain Vista",
+        image: "/placeholder.svg",
+        price: 134,
+      },
+      { id: 12, title: "Ocean Sunset", image: "/placeholder.svg", price: 167 },
+    ],
   },
   {
     id: "digital-art",
     name: "Digital Art",
-    description: "Contemporary digital creations and computer-generated artwork pushing creative boundaries.",
+    description:
+      "Contemporary digital creations and computer-generated artwork pushing creative boundaries.",
     icon: Monitor,
     artworkCount: 324,
     featured: false,
@@ -78,24 +140,35 @@ const categories = [
     examples: [
       { id: 13, title: "Digital Waves", image: "/placeholder.svg", price: 78 },
       { id: 14, title: "Cyber Dreams", image: "/placeholder.svg", price: 95 },
-      { id: 15, title: "Neon Future", image: "/placeholder.svg", price: 112 }
-    ]
+      { id: 15, title: "Neon Future", image: "/placeholder.svg", price: 112 },
+    ],
   },
   {
     id: "portraits",
     name: "Portraits",
-    description: "Artistic representations of people, capturing personality, emotion, and human expression.",
+    description:
+      "Artistic representations of people, capturing personality, emotion, and human expression.",
     icon: User,
     artworkCount: 167,
     featured: false,
     image: "/placeholder.svg",
     color: "from-rose-500 to-pink-500",
     examples: [
-      { id: 16, title: "Portrait in Blue", image: "/placeholder.svg", price: 156 },
+      {
+        id: 16,
+        title: "Portrait in Blue",
+        image: "/placeholder.svg",
+        price: 156,
+      },
       { id: 17, title: "Modern Face", image: "/placeholder.svg", price: 123 },
-      { id: 18, title: "Expression Study", image: "/placeholder.svg", price: 89 }
-    ]
-  }
+      {
+        id: 18,
+        title: "Expression Study",
+        image: "/placeholder.svg",
+        price: 89,
+      },
+    ],
+  },
 ];
 
 export default function Categories() {
@@ -107,18 +180,31 @@ export default function Categories() {
           <div className="mr-4 hidden md:flex">
             <Link to="/" className="mr-6 flex items-center space-x-2">
               <div className="h-8 w-8 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-lg">A</span>
+                <span className="text-accent-foreground font-bold text-lg">
+                  A
+                </span>
               </div>
-              <span className="hidden font-bold sm:inline-block text-xl">Artistry</span>
+              <span className="hidden font-bold sm:inline-block text-xl">
+                Artistry
+              </span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
-              <Link to="/gallery" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/gallery"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 Gallery
               </Link>
-              <Link to="/categories" className="transition-colors hover:text-foreground/80 text-foreground">
+              <Link
+                to="/categories"
+                className="transition-colors hover:text-foreground/80 text-foreground"
+              >
                 Categories
               </Link>
-              <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/about"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 About Me
               </Link>
             </nav>
@@ -156,17 +242,22 @@ export default function Categories() {
       <div className="container py-8">
         {/* Breadcrumb */}
         <div className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
-          <Link to="/" className="hover:text-foreground">Home</Link>
+          <Link to="/" className="hover:text-foreground">
+            Home
+          </Link>
           <span>/</span>
           <span className="text-foreground">Categories</span>
         </div>
 
         {/* Page Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold tracking-tight mb-4">My Art Collection</h1>
+          <h1 className="text-4xl font-bold tracking-tight mb-4">
+            My Art Collection
+          </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explore my artwork organized by style and theme.
-            Each category represents a different aspect of my creative journey and artistic vision.
+            Explore my artwork organized by style and theme. Each category
+            represents a different aspect of my creative journey and artistic
+            vision.
           </p>
         </div>
 
@@ -181,57 +272,74 @@ export default function Categories() {
               </Link>
             </Button>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {categories.filter(cat => cat.featured).map((category) => {
-              const Icon = category.icon;
-              return (
-                <Card key={category.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
-                  <CardContent className="p-0">
-                    {/* Category Header */}
-                    <div className={`relative h-32 bg-gradient-to-br ${category.color} p-6 text-white`}>
-                      <div className="flex items-center justify-between h-full">
-                        <div>
-                          <Icon className="h-8 w-8 mb-2" />
-                          <h3 className="text-xl font-bold">{category.name}</h3>
-                          <p className="text-white/80 text-sm">{category.artworkCount} artworks</p>
-                        </div>
-                        <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
-                          Featured
-                        </Badge>
-                      </div>
-                    </div>
-                    
-                    {/* Category Content */}
-                    <div className="p-6">
-                      <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                        {category.description}
-                      </p>
-                      
-                      {/* Example Artworks */}
-                      <div className="grid grid-cols-3 gap-2 mb-4">
-                        {category.examples.map((artwork) => (
-                          <div key={artwork.id} className="aspect-square bg-muted rounded overflow-hidden">
-                            <img 
-                              src={artwork.image} 
-                              alt={artwork.title}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            />
+            {categories
+              .filter((cat) => cat.featured)
+              .map((category) => {
+                const Icon = category.icon;
+                return (
+                  <Card
+                    key={category.id}
+                    className="group hover:shadow-xl transition-all duration-300 overflow-hidden"
+                  >
+                    <CardContent className="p-0">
+                      {/* Category Header */}
+                      <div
+                        className={`relative h-32 bg-gradient-to-br ${category.color} p-6 text-white`}
+                      >
+                        <div className="flex items-center justify-between h-full">
+                          <div>
+                            <Icon className="h-8 w-8 mb-2" />
+                            <h3 className="text-xl font-bold">
+                              {category.name}
+                            </h3>
+                            <p className="text-white/80 text-sm">
+                              {category.artworkCount} artworks
+                            </p>
                           </div>
-                        ))}
+                          <Badge
+                            variant="secondary"
+                            className="bg-white/20 text-white border-white/30"
+                          >
+                            Featured
+                          </Badge>
+                        </div>
                       </div>
-                      
-                      <Button className="w-full" asChild>
-                        <Link to={`/gallery?category=${category.id}`}>
-                          Explore {category.name}
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
+
+                      {/* Category Content */}
+                      <div className="p-6">
+                        <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                          {category.description}
+                        </p>
+
+                        {/* Example Artworks */}
+                        <div className="grid grid-cols-3 gap-2 mb-4">
+                          {category.examples.map((artwork) => (
+                            <div
+                              key={artwork.id}
+                              className="aspect-square bg-muted rounded overflow-hidden"
+                            >
+                              <img
+                                src={artwork.image}
+                                alt={artwork.title}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                              />
+                            </div>
+                          ))}
+                        </div>
+
+                        <Button className="w-full" asChild>
+                          <Link to={`/gallery?category=${category.id}`}>
+                            Explore {category.name}
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Link>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
           </div>
         </section>
 
@@ -242,11 +350,19 @@ export default function Categories() {
             {categories.map((category) => {
               const Icon = category.icon;
               return (
-                <Card key={category.id} className="group hover:shadow-lg transition-all duration-300 cursor-pointer">
+                <Card
+                  key={category.id}
+                  className="group hover:shadow-lg transition-all duration-300 cursor-pointer"
+                >
                   <CardContent className="p-6">
-                    <Link to={`/gallery?category=${category.id}`} className="block">
+                    <Link
+                      to={`/gallery?category=${category.id}`}
+                      className="block"
+                    >
                       <div className="flex items-start space-x-4">
-                        <div className={`p-3 rounded-lg bg-gradient-to-br ${category.color} text-white flex-shrink-0`}>
+                        <div
+                          className={`p-3 rounded-lg bg-gradient-to-br ${category.color} text-white flex-shrink-0`}
+                        >
                           <Icon className="h-6 w-6" />
                         </div>
                         <div className="flex-1 min-w-0">
@@ -281,10 +397,12 @@ export default function Categories() {
 
         {/* Call to Action */}
         <section className="text-center py-16">
-          <h2 className="text-3xl font-bold mb-4">Looking for Something Specific?</h2>
+          <h2 className="text-3xl font-bold mb-4">
+            Looking for Something Specific?
+          </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            My collection is constantly evolving. Browse my complete gallery or get in touch
-            for custom commissions and personalized artwork.
+            My collection is constantly evolving. Browse my complete gallery or
+            get in touch for custom commissions and personalized artwork.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
@@ -294,9 +412,7 @@ export default function Categories() {
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <Link to="/about">
-                Contact Me
-              </Link>
+              <Link to="/about">Contact Me</Link>
             </Button>
           </div>
         </section>

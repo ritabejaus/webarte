@@ -8,7 +8,10 @@ interface PlaceholderPageProps {
   description: string;
 }
 
-export default function PlaceholderPage({ title, description }: PlaceholderPageProps) {
+export default function PlaceholderPage({
+  title,
+  description,
+}: PlaceholderPageProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Header/Navigation */}
@@ -17,21 +20,37 @@ export default function PlaceholderPage({ title, description }: PlaceholderPageP
           <div className="mr-4 hidden md:flex">
             <Link to="/" className="mr-6 flex items-center space-x-2">
               <div className="h-8 w-8 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-lg">A</span>
+                <span className="text-accent-foreground font-bold text-lg">
+                  A
+                </span>
               </div>
-              <span className="hidden font-bold sm:inline-block text-xl">Artistry</span>
+              <span className="hidden font-bold sm:inline-block text-xl">
+                Artistry
+              </span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
-              <Link to="/gallery" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/gallery"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 Gallery
               </Link>
-              <Link to="/categories" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/categories"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 Categories
               </Link>
-              <Link to="/artists" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/artists"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 Artists
               </Link>
-              <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/about"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 About
               </Link>
             </nav>
@@ -53,7 +72,8 @@ export default function PlaceholderPage({ title, description }: PlaceholderPageP
                   {description}
                 </p>
                 <p className="text-sm text-muted-foreground mb-8">
-                  This page is coming soon! Continue exploring or return to see more amazing art.
+                  This page is coming soon! Continue exploring or return to see
+                  more amazing art.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -1,9 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Star, ShoppingCart, Heart, Search, ArrowLeft, Share2, Minus, Plus, Shield, Truck, RotateCcw } from "lucide-react";
+import {
+  Star,
+  ShoppingCart,
+  Heart,
+  Search,
+  ArrowLeft,
+  Share2,
+  Minus,
+  Plus,
+  Shield,
+  Truck,
+  RotateCcw,
+} from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 
@@ -12,26 +30,38 @@ const productData = {
   id: 1,
   title: "Figuras en Crecimiento",
   price: 10,
-  images: ["https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F8148f42d866e42e9bc0246b3905bc629?format=webp&width=800", "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F855c73c7656048769aaec1b94a947d01?format=webp&width=800", "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F9e8f97e5509e4cefb906f378a3eb0018?format=webp&width=800", "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F79a2f69167354bdcada4447668a484af?format=webp&width=800"],
+  images: [
+    "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F8148f42d866e42e9bc0246b3905bc629?format=webp&width=800",
+    "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F855c73c7656048769aaec1b94a947d01?format=webp&width=800",
+    "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F9e8f97e5509e4cefb906f378a3eb0018?format=webp&width=800",
+    "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F79a2f69167354bdcada4447668a484af?format=webp&width=800",
+  ],
   rating: 4.8,
   reviews: 124,
   category: "Abstract",
   style: "Modern",
-  description: "A stunning abstract piece that captures the essence of a horizon where sky meets earth. This artwork uses bold strokes and vibrant colors to create a sense of movement and depth.",
+  description:
+    "A stunning abstract piece that captures the essence of a horizon where sky meets earth. This artwork uses bold strokes and vibrant colors to create a sense of movement and depth.",
   details: {
     medium: "Digital Print",
-    dimensions: "24\" x 18\"",
+    dimensions: '24" x 18"',
     weight: "2 lbs",
     frame: "Not included",
     style: "Contemporary Abstract",
-    orientation: "Landscape"
+    orientation: "Landscape",
   },
-  artist_bio: "This piece is part of my ongoing exploration of abstract compositions that examine the relationship between color and emotion. Created in my Barcelona studio.",
+  artist_bio:
+    "This piece is part of my ongoing exploration of abstract compositions that examine the relationship between color and emotion. Created in my Barcelona studio.",
   shipping: "Free shipping on orders over $75",
   returns: "30-day return policy",
   inStock: true,
-  sizes: ["Small (12\" x 16\")", "Medium (18\" x 24\")", "Large (24\" x 32\")"],
-  frames: ["No Frame", "Black Frame (+$25)", "White Frame (+$25)", "Natural Wood (+$35)"]
+  sizes: ['Small (12" x 16")', 'Medium (18" x 24")', 'Large (24" x 32")'],
+  frames: [
+    "No Frame",
+    "Black Frame (+$25)",
+    "White Frame (+$25)",
+    "Natural Wood (+$35)",
+  ],
 };
 
 const relatedProducts = [
@@ -39,23 +69,26 @@ const relatedProducts = [
     id: 2,
     title: "Hoy Su Voy a Ti Ch",
     price: 15,
-    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F855c73c7656048769aaec1b94a947d01?format=webp&width=800",
-    rating: 4.9
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F855c73c7656048769aaec1b94a947d01?format=webp&width=800",
+    rating: 4.9,
   },
   {
     id: 4,
     title: "Jardín Interior",
     price: 15,
-    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F79a2f69167354bdcada4447668a484af?format=webp&width=800",
-    rating: 4.9
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F79a2f69167354bdcada4447668a484af?format=webp&width=800",
+    rating: 4.9,
   },
   {
     id: 6,
     title: "Tiempo y Espacio",
     price: 10,
-    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F9e8f97e5509e4cefb906f378a3eb0018?format=webp&width=800",
-    rating: 4.8
-  }
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F9e8f97e5509e4cefb906f378a3eb0018?format=webp&width=800",
+    rating: 4.8,
+  },
 ];
 
 export default function ProductDetail() {
@@ -73,7 +106,9 @@ export default function ProductDetail() {
     return 10; // default Medium price
   };
 
-  const currentPrice = selectedSize ? getPriceForSize(selectedSize) : productData.price;
+  const currentPrice = selectedSize
+    ? getPriceForSize(selectedSize)
+    : productData.price;
 
   const handleAddToCart = () => {
     if (!selectedSize) {
@@ -81,16 +116,20 @@ export default function ProductDetail() {
       return;
     }
     if (!selectedFrame) {
-      alert("Por favor selecciona una opción de marco antes de agregar al carrito");
+      alert(
+        "Por favor selecciona una opción de marco antes de agregar al carrito",
+      );
       return;
     }
 
     // Here you would typically add to cart state/context
     // For now, we'll show a success message and redirect to cart
-    alert(`¡Agregado al carrito!\n\n${productData.title}\nTamaño: ${selectedSize}\nMarco: ${selectedFrame}\nCantidad: ${quantity}\nPrecio: $${currentPrice * quantity}`);
+    alert(
+      `¡Agregado al carrito!\n\n${productData.title}\nTamaño: ${selectedSize}\nMarco: ${selectedFrame}\nCantidad: ${quantity}\nPrecio: $${currentPrice * quantity}`,
+    );
 
     // Redirect to cart page
-    window.location.href = '/cart';
+    window.location.href = "/cart";
   };
 
   return (
@@ -101,21 +140,37 @@ export default function ProductDetail() {
           <div className="mr-4 hidden md:flex">
             <Link to="/" className="mr-6 flex items-center space-x-2">
               <div className="h-8 w-8 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-lg">A</span>
+                <span className="text-accent-foreground font-bold text-lg">
+                  A
+                </span>
               </div>
-              <span className="hidden font-bold sm:inline-block text-xl">Artistry</span>
+              <span className="hidden font-bold sm:inline-block text-xl">
+                Artistry
+              </span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
-              <Link to="/gallery" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/gallery"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 Gallery
               </Link>
-              <Link to="/categories" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/categories"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 Categories
               </Link>
-              <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/about"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 About Me
               </Link>
-              <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/about"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 About
               </Link>
             </nav>
@@ -153,9 +208,13 @@ export default function ProductDetail() {
       <div className="container py-8">
         {/* Breadcrumb */}
         <div className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
-          <Link to="/" className="hover:text-foreground">Home</Link>
+          <Link to="/" className="hover:text-foreground">
+            Home
+          </Link>
           <span>/</span>
-          <Link to="/gallery" className="hover:text-foreground">Gallery</Link>
+          <Link to="/gallery" className="hover:text-foreground">
+            Gallery
+          </Link>
           <span>/</span>
           <span className="text-foreground">{productData.title}</span>
         </div>
@@ -171,7 +230,7 @@ export default function ProductDetail() {
                 className="w-full h-full object-cover"
               />
             </div>
-            
+
             {/* Thumbnail Images */}
             <div className="grid grid-cols-4 gap-4">
               {productData.images.map((image, index) => (
@@ -179,7 +238,9 @@ export default function ProductDetail() {
                   key={index}
                   onClick={() => setSelectedImage(index)}
                   className={`aspect-square overflow-hidden rounded-lg border-2 transition-colors ${
-                    selectedImage === index ? "border-accent" : "border-transparent"
+                    selectedImage === index
+                      ? "border-accent"
+                      : "border-transparent"
                   }`}
                 >
                   <img
@@ -202,8 +263,10 @@ export default function ProductDetail() {
                 </Button>
               </div>
               <h1 className="text-3xl font-bold mb-2">{productData.title}</h1>
-              <p className="text-lg text-muted-foreground mb-4">Original Artwork</p>
-              
+              <p className="text-lg text-muted-foreground mb-4">
+                Original Artwork
+              </p>
+
               {/* Rating */}
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex items-center">
@@ -211,13 +274,17 @@ export default function ProductDetail() {
                     <Star
                       key={i}
                       className={`h-4 w-4 ${
-                        i < Math.floor(productData.rating) ? "fill-accent text-accent" : "text-muted-foreground"
+                        i < Math.floor(productData.rating)
+                          ? "fill-accent text-accent"
+                          : "text-muted-foreground"
                       }`}
                     />
                   ))}
                   <span className="ml-2 text-sm">{productData.rating}</span>
                 </div>
-                <span className="text-sm text-muted-foreground">({productData.reviews} reviews)</span>
+                <span className="text-sm text-muted-foreground">
+                  ({productData.reviews} reviews)
+                </span>
               </div>
 
               {/* Price */}
@@ -225,9 +292,9 @@ export default function ProductDetail() {
                 <span className="text-3xl font-bold">${currentPrice}</span>
                 {selectedSize && (
                   <span className="text-sm text-muted-foreground">
-                    {selectedSize.includes("Small") && "Small (12\" x 16\")"}
-                    {selectedSize.includes("Medium") && "Medium (18\" x 24\")"}
-                    {selectedSize.includes("Large") && "Large (24\" x 32\")"}
+                    {selectedSize.includes("Small") && 'Small (12" x 16")'}
+                    {selectedSize.includes("Medium") && 'Medium (18" x 24")'}
+                    {selectedSize.includes("Large") && 'Large (24" x 32")'}
                   </span>
                 )}
               </div>
@@ -243,7 +310,9 @@ export default function ProductDetail() {
                   </SelectTrigger>
                   <SelectContent>
                     {productData.sizes.map((size) => (
-                      <SelectItem key={size} value={size}>{size}</SelectItem>
+                      <SelectItem key={size} value={size}>
+                        {size}
+                      </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
@@ -257,14 +326,18 @@ export default function ProductDetail() {
                   </SelectTrigger>
                   <SelectContent>
                     {productData.frames.map((frame) => (
-                      <SelectItem key={frame} value={frame}>{frame}</SelectItem>
+                      <SelectItem key={frame} value={frame}>
+                        {frame}
+                      </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
               </div>
 
               <div>
-                <label className="text-sm font-medium mb-2 block">Quantity</label>
+                <label className="text-sm font-medium mb-2 block">
+                  Quantity
+                </label>
                 <div className="flex items-center space-x-2">
                   <Button
                     variant="outline"
@@ -344,8 +417,13 @@ export default function ProductDetail() {
                 <CardContent className="p-6">
                   <div className="grid grid-cols-2 gap-4">
                     {Object.entries(productData.details).map(([key, value]) => (
-                      <div key={key} className="flex justify-between py-2 border-b border-border/50">
-                        <span className="font-medium capitalize">{key.replace('_', ' ')}</span>
+                      <div
+                        key={key}
+                        className="flex justify-between py-2 border-b border-border/50"
+                      >
+                        <span className="font-medium capitalize">
+                          {key.replace("_", " ")}
+                        </span>
                         <span className="text-muted-foreground">{value}</span>
                       </div>
                     ))}
@@ -370,7 +448,10 @@ export default function ProductDetail() {
           <h2 className="text-2xl font-bold mb-8">You might also like</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedProducts.map((product) => (
-              <Card key={product.id} className="group cursor-pointer hover:shadow-lg transition-all duration-300">
+              <Card
+                key={product.id}
+                className="group cursor-pointer hover:shadow-lg transition-all duration-300"
+              >
                 <CardContent className="p-0">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-t-lg">
                     <img
@@ -381,7 +462,9 @@ export default function ProductDetail() {
                   </div>
                   <div className="p-4">
                     <h3 className="font-semibold mb-1">{product.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-2">Original Artwork</p>
+                    <p className="text-sm text-muted-foreground mb-2">
+                      Original Artwork
+                    </p>
                     <div className="flex items-center justify-between">
                       <span className="font-bold">${product.price}</span>
                       <div className="flex items-center">

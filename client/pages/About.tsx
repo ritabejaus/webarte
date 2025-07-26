@@ -1,7 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ShoppingCart, Heart, Search, Mail, MapPin, Palette, Award, Users, Calendar } from "lucide-react";
+import {
+  ShoppingCart,
+  Heart,
+  Search,
+  Mail,
+  MapPin,
+  Palette,
+  Award,
+  Users,
+  Calendar,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function About() {
@@ -13,18 +23,31 @@ export default function About() {
           <div className="mr-4 hidden md:flex">
             <Link to="/" className="mr-6 flex items-center space-x-2">
               <div className="h-8 w-8 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-lg">A</span>
+                <span className="text-accent-foreground font-bold text-lg">
+                  A
+                </span>
               </div>
-              <span className="hidden font-bold sm:inline-block text-xl">Artistry</span>
+              <span className="hidden font-bold sm:inline-block text-xl">
+                Artistry
+              </span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
-              <Link to="/gallery" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/gallery"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 Gallery
               </Link>
-              <Link to="/categories" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/categories"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 Categories
               </Link>
-              <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground">
+              <Link
+                to="/about"
+                className="transition-colors hover:text-foreground/80 text-foreground"
+              >
                 About Me
               </Link>
             </nav>
@@ -62,7 +85,9 @@ export default function About() {
       <div className="container py-8">
         {/* Breadcrumb */}
         <div className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
-          <Link to="/" className="hover:text-foreground">Home</Link>
+          <Link to="/" className="hover:text-foreground">
+            Home
+          </Link>
           <span>/</span>
           <span className="text-foreground">About Me</span>
         </div>
@@ -71,19 +96,26 @@ export default function About() {
         <section className="py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl font-bold tracking-tight mb-6">Hello, I'm an Artist</h1>
+              <h1 className="text-4xl font-bold tracking-tight mb-6">
+                Hello, I'm an Artist
+              </h1>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Welcome to my creative world. I'm passionate about creating art that connects with people 
-                and transforms spaces. My work spans multiple styles and mediums, from abstract compositions 
-                to detailed studies of nature and urban life.
+                Welcome to my creative world. I'm passionate about creating art
+                that connects with people and transforms spaces. My work spans
+                multiple styles and mediums, from abstract compositions to
+                detailed studies of nature and urban life.
               </p>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Each piece I create is born from a moment of inspiration, whether it's the play of light 
-                on a city street, the organic patterns in nature, or the pure expression of color and form. 
-                I believe art should evoke emotion and spark conversation.
+                Each piece I create is born from a moment of inspiration,
+                whether it's the play of light on a city street, the organic
+                patterns in nature, or the pure expression of color and form. I
+                believe art should evoke emotion and spark conversation.
               </p>
               <div className="flex gap-4">
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                <Button
+                  size="lg"
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                >
                   <Mail className="mr-2 h-4 w-4" />
                   Get in Touch
                 </Button>
@@ -110,14 +142,18 @@ export default function About() {
                 <Palette className="h-6 w-6 text-accent" />
               </div>
               <div className="text-2xl font-bold mb-1">500+</div>
-              <div className="text-sm text-muted-foreground">Artworks Created</div>
+              <div className="text-sm text-muted-foreground">
+                Artworks Created
+              </div>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center w-12 h-12 bg-accent/10 rounded-lg mx-auto mb-4">
                 <Users className="h-6 w-6 text-accent" />
               </div>
               <div className="text-2xl font-bold mb-1">1,200+</div>
-              <div className="text-sm text-muted-foreground">Happy Collectors</div>
+              <div className="text-sm text-muted-foreground">
+                Happy Collectors
+              </div>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center w-12 h-12 bg-accent/10 rounded-lg mx-auto mb-4">
@@ -131,7 +167,9 @@ export default function About() {
                 <Calendar className="h-6 w-6 text-accent" />
               </div>
               <div className="text-2xl font-bold mb-1">8+</div>
-              <div className="text-sm text-muted-foreground">Years Creating</div>
+              <div className="text-sm text-muted-foreground">
+                Years Creating
+              </div>
             </div>
           </div>
         </section>
@@ -141,7 +179,8 @@ export default function About() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">My Creative Process</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Every piece begins with observation and inspiration. Here's how I transform ideas into artwork.
+              Every piece begins with observation and inspiration. Here's how I
+              transform ideas into artwork.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -152,7 +191,8 @@ export default function About() {
                 </div>
                 <h3 className="font-semibold mb-2">Inspiration</h3>
                 <p className="text-sm text-muted-foreground">
-                  Finding beauty in everyday moments, nature, and human experiences that spark creative energy.
+                  Finding beauty in everyday moments, nature, and human
+                  experiences that spark creative energy.
                 </p>
               </CardContent>
             </Card>
@@ -163,7 +203,8 @@ export default function About() {
                 </div>
                 <h3 className="font-semibold mb-2">Creation</h3>
                 <p className="text-sm text-muted-foreground">
-                  Translating emotions and ideas into visual form through various mediums and techniques.
+                  Translating emotions and ideas into visual form through
+                  various mediums and techniques.
                 </p>
               </CardContent>
             </Card>
@@ -174,7 +215,8 @@ export default function About() {
                 </div>
                 <h3 className="font-semibold mb-2">Connection</h3>
                 <p className="text-sm text-muted-foreground">
-                  Sharing my work with collectors who appreciate the story and emotion behind each piece.
+                  Sharing my work with collectors who appreciate the story and
+                  emotion behind each piece.
                 </p>
               </CardContent>
             </Card>
@@ -186,12 +228,14 @@ export default function About() {
           <div className="text-center max-w-3xl mx-auto px-6">
             <h2 className="text-3xl font-bold mb-6">My Art Philosophy</h2>
             <blockquote className="text-xl text-muted-foreground italic mb-6 leading-relaxed">
-              "Art is not what you see, but what you make others see. My goal is to create pieces 
-              that resonate deeply, evoke emotion, and become a meaningful part of someone's life and space."
+              "Art is not what you see, but what you make others see. My goal is
+              to create pieces that resonate deeply, evoke emotion, and become a
+              meaningful part of someone's life and space."
             </blockquote>
             <p className="text-muted-foreground">
-              I believe that art has the power to transform not just spaces, but perspectives. 
-              Each piece I create is an invitation to see the world through a different lens.
+              I believe that art has the power to transform not just spaces, but
+              perspectives. Each piece I create is an invitation to see the
+              world through a different lens.
             </p>
           </div>
         </section>
@@ -201,8 +245,8 @@ export default function About() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Let's Connect</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Interested in commissioning a piece, collaborating, or just want to chat about art? 
-              I'd love to hear from you.
+              Interested in commissioning a piece, collaborating, or just want
+              to chat about art? I'd love to hear from you.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -214,14 +258,19 @@ export default function About() {
                 </h3>
                 <div className="space-y-3">
                   <p className="text-sm">
-                    <span className="font-medium">Email:</span> artist@example.com
+                    <span className="font-medium">Email:</span>{" "}
+                    artist@example.com
                   </p>
                   <p className="text-sm">
-                    <span className="font-medium">Phone:</span> +1 (555) 123-4567
+                    <span className="font-medium">Phone:</span> +1 (555)
+                    123-4567
                   </p>
                   <p className="text-sm flex items-start">
                     <MapPin className="mr-2 h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
-                    <span><span className="font-medium">Studio:</span> Barcelona, Spain</span>
+                    <span>
+                      <span className="font-medium">Studio:</span> Barcelona,
+                      Spain
+                    </span>
                   </p>
                 </div>
               </CardContent>
@@ -230,8 +279,9 @@ export default function About() {
               <CardContent className="p-6">
                 <h3 className="font-semibold mb-4">Commission Work</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  I accept custom commissions for original artwork. Whether you have a specific vision 
-                  or want me to create something unique for your space, let's discuss your ideas.
+                  I accept custom commissions for original artwork. Whether you
+                  have a specific vision or want me to create something unique
+                  for your space, let's discuss your ideas.
                 </p>
                 <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
                   <Mail className="mr-2 h-4 w-4" />

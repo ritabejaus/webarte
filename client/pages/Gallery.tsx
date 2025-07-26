@@ -1,10 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Slider } from "@/components/ui/slider";
-import { Star, ShoppingCart, Heart, Search, Filter, Grid3X3, List, ArrowLeft } from "lucide-react";
+import {
+  Star,
+  ShoppingCart,
+  Heart,
+  Search,
+  Filter,
+  Grid3X3,
+  List,
+  ArrowLeft,
+} from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -14,94 +29,115 @@ const artworks = [
     id: 1,
     title: "Figuras en Crecimiento",
     price: 10,
-    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F8148f42d866e42e9bc0246b3905bc629?format=webp&width=800",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F8148f42d866e42e9bc0246b3905bc629?format=webp&width=800",
     rating: 4.8,
     reviews: 124,
     category: "Abstract",
     style: "Modern",
-    size: "Medium"
+    size: "Medium",
   },
   {
     id: 2,
     title: "Hoy Su Voy a Ti Ch",
     price: 15,
-    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F855c73c7656048769aaec1b94a947d01?format=webp&width=800",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F855c73c7656048769aaec1b94a947d01?format=webp&width=800",
     rating: 4.9,
     reviews: 89,
     category: "Abstract",
     style: "Contemporary",
-    size: "Large"
+    size: "Large",
   },
   {
     id: 3,
     title: "Formas en Movimiento",
     price: 5,
-    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2Ff3c023de9baf4aaf81932878813b37cc?format=webp&width=800",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2Ff3c023de9baf4aaf81932878813b37cc?format=webp&width=800",
     rating: 4.7,
     reviews: 156,
     category: "Abstract",
     style: "Minimalist",
-    size: "Small"
+    size: "Small",
   },
   {
     id: 4,
     title: "Jardín Interior",
     price: 15,
-    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F79a2f69167354bdcada4447668a484af?format=webp&width=800",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F79a2f69167354bdcada4447668a484af?format=webp&width=800",
     rating: 4.9,
     reviews: 67,
     category: "Nature",
     style: "Realistic",
-    size: "Large"
+    size: "Large",
   },
   {
     id: 5,
     title: "Paisaje Digital",
     price: 10,
-    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F2baac664c2ae45b498d8e7bb8c4e7169?format=webp&width=800",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F2baac664c2ae45b498d8e7bb8c4e7169?format=webp&width=800",
     rating: 4.6,
     reviews: 203,
     category: "Landscape",
     style: "Modern",
-    size: "Medium"
+    size: "Medium",
   },
   {
     id: 6,
     title: "Tiempo y Espacio",
     price: 10,
-    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F9e8f97e5509e4cefb906f378a3eb0018?format=webp&width=800",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F9e8f97e5509e4cefb906f378a3eb0018?format=webp&width=800",
     rating: 4.8,
     reviews: 91,
     category: "Abstract",
     style: "Classical",
-    size: "Medium"
+    size: "Medium",
   },
   {
     id: 7,
     title: "Reflexiones Cotidianas",
     price: 15,
-    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F84a2b5094b2c4b7699c91669f85338ec?format=webp&width=800",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F84a2b5094b2c4b7699c91669f85338ec?format=webp&width=800",
     rating: 4.7,
     reviews: 58,
     category: "Abstract",
     style: "Contemporary",
-    size: "Large"
+    size: "Large",
   },
   {
     id: 8,
     title: "Estación de Rita",
     price: 10,
-    image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F4d1395f370344d069d365a30f5ca6262?format=webp&width=800",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F4d1395f370344d069d365a30f5ca6262?format=webp&width=800",
     rating: 4.5,
     reviews: 73,
     category: "Abstract",
     style: "Modern",
-    size: "Medium"
-  }
+    size: "Medium",
+  },
 ];
 
-const categories = ["Abstract", "Photography", "Nature", "Landscape", "Digital Art", "Portraits"];
-const styles = ["Modern", "Contemporary", "Minimalist", "Realistic", "Classical"];
+const categories = [
+  "Abstract",
+  "Photography",
+  "Nature",
+  "Landscape",
+  "Digital Art",
+  "Portraits",
+];
+const styles = [
+  "Modern",
+  "Contemporary",
+  "Minimalist",
+  "Realistic",
+  "Classical",
+];
 const sizes = ["Small", "Medium", "Large"];
 
 export default function Gallery() {
@@ -115,16 +151,16 @@ export default function Gallery() {
 
   // Handle URL parameters on component mount
   useEffect(() => {
-    const categoryParam = searchParams.get('category');
+    const categoryParam = searchParams.get("category");
     if (categoryParam) {
       // Convert URL category ID to display name
       const categoryMap: { [key: string]: string } = {
-        'abstract': 'Abstract',
-        'photography': 'Photography',
-        'nature': 'Nature',
-        'landscape': 'Landscape',
-        'digital-art': 'Digital Art',
-        'portraits': 'Portraits'
+        abstract: "Abstract",
+        photography: "Photography",
+        nature: "Nature",
+        landscape: "Landscape",
+        "digital-art": "Digital Art",
+        portraits: "Portraits",
       };
       const categoryName = categoryMap[categoryParam];
       if (categoryName && categories.includes(categoryName)) {
@@ -133,9 +169,13 @@ export default function Gallery() {
     }
   }, [searchParams]);
 
-  const toggleFilter = (filterArray: string[], setFilterArray: (value: string[]) => void, value: string) => {
+  const toggleFilter = (
+    filterArray: string[],
+    setFilterArray: (value: string[]) => void,
+    value: string,
+  ) => {
     if (filterArray.includes(value)) {
-      setFilterArray(filterArray.filter(item => item !== value));
+      setFilterArray(filterArray.filter((item) => item !== value));
     } else {
       setFilterArray([...filterArray, value]);
     }
@@ -148,16 +188,22 @@ export default function Gallery() {
     setPriceRange([0, 20]);
   };
 
-  const filteredArtworks = artworks.filter(artwork => {
+  const filteredArtworks = artworks.filter((artwork) => {
     return (
-      (selectedCategories.length === 0 || selectedCategories.includes(artwork.category)) &&
+      (selectedCategories.length === 0 ||
+        selectedCategories.includes(artwork.category)) &&
       (selectedStyles.length === 0 || selectedStyles.includes(artwork.style)) &&
       (selectedSizes.length === 0 || selectedSizes.includes(artwork.size)) &&
-      artwork.price >= priceRange[0] && artwork.price <= priceRange[1]
+      artwork.price >= priceRange[0] &&
+      artwork.price <= priceRange[1]
     );
   });
 
-  const activeFiltersCount = selectedCategories.length + selectedStyles.length + selectedSizes.length + (priceRange[0] > 0 || priceRange[1] < 20 ? 1 : 0);
+  const activeFiltersCount =
+    selectedCategories.length +
+    selectedStyles.length +
+    selectedSizes.length +
+    (priceRange[0] > 0 || priceRange[1] < 20 ? 1 : 0);
 
   return (
     <div className="min-h-screen bg-background">
@@ -167,21 +213,37 @@ export default function Gallery() {
           <div className="mr-4 hidden md:flex">
             <Link to="/" className="mr-6 flex items-center space-x-2">
               <div className="h-8 w-8 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-lg">A</span>
+                <span className="text-accent-foreground font-bold text-lg">
+                  A
+                </span>
               </div>
-              <span className="hidden font-bold sm:inline-block text-xl">Artistry</span>
+              <span className="hidden font-bold sm:inline-block text-xl">
+                Artistry
+              </span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
-              <Link to="/gallery" className="transition-colors hover:text-foreground/80 text-foreground">
+              <Link
+                to="/gallery"
+                className="transition-colors hover:text-foreground/80 text-foreground"
+              >
                 Gallery
               </Link>
-              <Link to="/categories" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/categories"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 Categories
               </Link>
-              <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/about"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 About Me
               </Link>
-              <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              <Link
+                to="/about"
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+              >
                 About
               </Link>
             </nav>
@@ -219,7 +281,9 @@ export default function Gallery() {
       <div className="container py-8">
         {/* Breadcrumb */}
         <div className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
-          <Link to="/" className="hover:text-foreground">Home</Link>
+          <Link to="/" className="hover:text-foreground">
+            Home
+          </Link>
           <span>/</span>
           <span className="text-foreground">Gallery</span>
         </div>
@@ -246,7 +310,9 @@ export default function Gallery() {
               <div className="flex items-center justify-between mb-3">
                 <h4 className="font-medium">Category</h4>
                 {selectedCategories.length > 0 && (
-                  <span className="text-xs text-muted-foreground">({selectedCategories.length})</span>
+                  <span className="text-xs text-muted-foreground">
+                    ({selectedCategories.length})
+                  </span>
                 )}
               </div>
               <div className="space-y-2">
@@ -255,9 +321,18 @@ export default function Gallery() {
                     <Checkbox
                       id={category}
                       checked={selectedCategories.includes(category)}
-                      onCheckedChange={() => toggleFilter(selectedCategories, setSelectedCategories, category)}
+                      onCheckedChange={() =>
+                        toggleFilter(
+                          selectedCategories,
+                          setSelectedCategories,
+                          category,
+                        )
+                      }
                     />
-                    <label htmlFor={category} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer">
+                    <label
+                      htmlFor={category}
+                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+                    >
                       {category}
                     </label>
                   </div>
@@ -270,7 +345,9 @@ export default function Gallery() {
               <div className="flex items-center justify-between mb-3">
                 <h4 className="font-medium">Style</h4>
                 {selectedStyles.length > 0 && (
-                  <span className="text-xs text-muted-foreground">({selectedStyles.length})</span>
+                  <span className="text-xs text-muted-foreground">
+                    ({selectedStyles.length})
+                  </span>
                 )}
               </div>
               <div className="space-y-2">
@@ -279,9 +356,14 @@ export default function Gallery() {
                     <Checkbox
                       id={style}
                       checked={selectedStyles.includes(style)}
-                      onCheckedChange={() => toggleFilter(selectedStyles, setSelectedStyles, style)}
+                      onCheckedChange={() =>
+                        toggleFilter(selectedStyles, setSelectedStyles, style)
+                      }
                     />
-                    <label htmlFor={style} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer">
+                    <label
+                      htmlFor={style}
+                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+                    >
                       {style}
                     </label>
                   </div>
@@ -294,7 +376,9 @@ export default function Gallery() {
               <div className="flex items-center justify-between mb-3">
                 <h4 className="font-medium">Size</h4>
                 {selectedSizes.length > 0 && (
-                  <span className="text-xs text-muted-foreground">({selectedSizes.length})</span>
+                  <span className="text-xs text-muted-foreground">
+                    ({selectedSizes.length})
+                  </span>
                 )}
               </div>
               <div className="space-y-2">
@@ -303,9 +387,14 @@ export default function Gallery() {
                     <Checkbox
                       id={size}
                       checked={selectedSizes.includes(size)}
-                      onCheckedChange={() => toggleFilter(selectedSizes, setSelectedSizes, size)}
+                      onCheckedChange={() =>
+                        toggleFilter(selectedSizes, setSelectedSizes, size)
+                      }
                     />
-                    <label htmlFor={size} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer">
+                    <label
+                      htmlFor={size}
+                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+                    >
                       {size}
                     </label>
                   </div>
@@ -342,22 +431,51 @@ export default function Gallery() {
                   <span className="font-medium">Active filters:</span>
                   <div className="flex flex-wrap gap-2">
                     {selectedCategories.map((category) => (
-                      <Badge key={category} variant="secondary" className="cursor-pointer" onClick={() => toggleFilter(selectedCategories, setSelectedCategories, category)}>
+                      <Badge
+                        key={category}
+                        variant="secondary"
+                        className="cursor-pointer"
+                        onClick={() =>
+                          toggleFilter(
+                            selectedCategories,
+                            setSelectedCategories,
+                            category,
+                          )
+                        }
+                      >
                         {category} ×
                       </Badge>
                     ))}
                     {selectedStyles.map((style) => (
-                      <Badge key={style} variant="secondary" className="cursor-pointer" onClick={() => toggleFilter(selectedStyles, setSelectedStyles, style)}>
+                      <Badge
+                        key={style}
+                        variant="secondary"
+                        className="cursor-pointer"
+                        onClick={() =>
+                          toggleFilter(selectedStyles, setSelectedStyles, style)
+                        }
+                      >
                         {style} ×
                       </Badge>
                     ))}
                     {selectedSizes.map((size) => (
-                      <Badge key={size} variant="secondary" className="cursor-pointer" onClick={() => toggleFilter(selectedSizes, setSelectedSizes, size)}>
+                      <Badge
+                        key={size}
+                        variant="secondary"
+                        className="cursor-pointer"
+                        onClick={() =>
+                          toggleFilter(selectedSizes, setSelectedSizes, size)
+                        }
+                      >
                         {size} ×
                       </Badge>
                     ))}
                     {(priceRange[0] > 0 || priceRange[1] < 20) && (
-                      <Badge variant="secondary" className="cursor-pointer" onClick={() => setPriceRange([0, 20])}>
+                      <Badge
+                        variant="secondary"
+                        className="cursor-pointer"
+                        onClick={() => setPriceRange([0, 20])}
+                      >
                         ${priceRange[0]} - ${priceRange[1]} ×
                       </Badge>
                     )}
@@ -389,8 +507,12 @@ export default function Gallery() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="featured">Featured</SelectItem>
-                    <SelectItem value="price-low">Price: Low to High</SelectItem>
-                    <SelectItem value="price-high">Price: High to Low</SelectItem>
+                    <SelectItem value="price-low">
+                      Price: Low to High
+                    </SelectItem>
+                    <SelectItem value="price-high">
+                      Price: High to Low
+                    </SelectItem>
                     <SelectItem value="rating">Highest Rated</SelectItem>
                     <SelectItem value="newest">Newest</SelectItem>
                   </SelectContent>
@@ -430,77 +552,102 @@ export default function Gallery() {
             </div>
 
             {/* Artworks Grid/List */}
-            <div className={viewMode === "grid" 
-              ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" 
-              : "space-y-6"
-            }>
+            <div
+              className={
+                viewMode === "grid"
+                  ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
+                  : "space-y-6"
+              }
+            >
               {filteredArtworks.map((artwork) => (
-              <Link key={artwork.id} to={`/product/${artwork.id}`}>
-                <Card className={`group cursor-pointer hover:shadow-xl transition-all duration-300 ${
-                  viewMode === "list" ? "flex flex-row" : ""
-                }`}>
-                  <CardContent className="p-0">
-                    <div className={`relative ${
-                      viewMode === "list" ? "w-48 h-48" : "aspect-[4/5]"
-                    } overflow-hidden ${viewMode === "list" ? "rounded-l-lg" : "rounded-t-lg"}`}>
-                      <img
-                        src={artwork.image}
-                        alt={artwork.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute top-3 right-3">
-                        <Button size="icon" variant="secondary" className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <Heart className="h-4 w-4" />
-                        </Button>
-                      </div>
-                      {artwork.originalPrice && (
-                        <Badge className="absolute top-3 left-3 bg-accent text-accent-foreground">
-                          Sale
-                        </Badge>
-                      )}
-                    </div>
-                    <div className={`p-4 ${viewMode === "list" ? "flex-1" : ""}`}>
-                      <div className="flex items-start justify-between mb-2">
-                        <div className="min-w-0 flex-1">
-                          <h3 className="font-semibold text-sm truncate">{artwork.title}</h3>
-                          <p className="text-xs text-muted-foreground">Original Artwork</p>
+                <Link key={artwork.id} to={`/product/${artwork.id}`}>
+                  <Card
+                    className={`group cursor-pointer hover:shadow-xl transition-all duration-300 ${
+                      viewMode === "list" ? "flex flex-row" : ""
+                    }`}
+                  >
+                    <CardContent className="p-0">
+                      <div
+                        className={`relative ${
+                          viewMode === "list" ? "w-48 h-48" : "aspect-[4/5]"
+                        } overflow-hidden ${viewMode === "list" ? "rounded-l-lg" : "rounded-t-lg"}`}
+                      >
+                        <img
+                          src={artwork.image}
+                          alt={artwork.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute top-3 right-3">
+                          <Button
+                            size="icon"
+                            variant="secondary"
+                            className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
+                          >
+                            <Heart className="h-4 w-4" />
+                          </Button>
                         </div>
-                        <Badge variant="outline" className="text-xs ml-2">
-                          {artwork.category}
-                        </Badge>
+                        {artwork.originalPrice && (
+                          <Badge className="absolute top-3 left-3 bg-accent text-accent-foreground">
+                            Sale
+                          </Badge>
+                        )}
                       </div>
-                      <div className="flex items-center gap-1 mb-3">
-                        <div className="flex items-center">
-                          <Star className="h-3 w-3 fill-accent text-accent" />
-                          <span className="text-xs ml-1">{artwork.rating}</span>
+                      <div
+                        className={`p-4 ${viewMode === "list" ? "flex-1" : ""}`}
+                      >
+                        <div className="flex items-start justify-between mb-2">
+                          <div className="min-w-0 flex-1">
+                            <h3 className="font-semibold text-sm truncate">
+                              {artwork.title}
+                            </h3>
+                            <p className="text-xs text-muted-foreground">
+                              Original Artwork
+                            </p>
+                          </div>
+                          <Badge variant="outline" className="text-xs ml-2">
+                            {artwork.category}
+                          </Badge>
                         </div>
-                        <span className="text-xs text-muted-foreground">({artwork.reviews})</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <span className="font-bold text-lg">${artwork.price}</span>
-                          {artwork.originalPrice && (
-                            <span className="text-sm text-muted-foreground line-through">
-                              ${artwork.originalPrice}
+                        <div className="flex items-center gap-1 mb-3">
+                          <div className="flex items-center">
+                            <Star className="h-3 w-3 fill-accent text-accent" />
+                            <span className="text-xs ml-1">
+                              {artwork.rating}
                             </span>
-                          )}
+                          </div>
+                          <span className="text-xs text-muted-foreground">
+                            ({artwork.reviews})
+                          </span>
                         </div>
-                        <Button
-                          size="sm"
-                          className="bg-accent hover:bg-accent/90 text-accent-foreground"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            alert(`¡Agregado al carrito!\n\n${artwork.title}\nTamaño: ${artwork.size}\nPrecio: $${artwork.price}`);
-                          }}
-                        >
-                          Add to Cart
-                        </Button>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <span className="font-bold text-lg">
+                              ${artwork.price}
+                            </span>
+                            {artwork.originalPrice && (
+                              <span className="text-sm text-muted-foreground line-through">
+                                ${artwork.originalPrice}
+                              </span>
+                            )}
+                          </div>
+                          <Button
+                            size="sm"
+                            className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              alert(
+                                `¡Agregado al carrito!\n\n${artwork.title}\nTamaño: ${artwork.size}\nPrecio: $${artwork.price}`,
+                              );
+                            }}
+                          >
+                            Add to Cart
+                          </Button>
+                        </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
 

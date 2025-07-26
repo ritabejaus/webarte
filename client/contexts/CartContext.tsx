@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from "react";
 
 export interface CartItem {
   id: number;
@@ -13,7 +13,7 @@ export interface CartItem {
 
 interface CartContextType {
   cartItems: CartItem[];
-  addToCart: (item: Omit<CartItem, 'quantity'>) => void;
+  addToCart: (item: Omit<CartItem, "quantity">) => void;
   removeFromCart: (id: number) => void;
   updateQuantity: (id: number, quantity: number) => void;
   clearCart: () => void;
@@ -26,7 +26,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) {
-    throw new Error('useCart must be used within a CartProvider');
+    throw new Error("useCart must be used within a CartProvider");
   }
   return context;
 };
@@ -38,11 +38,14 @@ interface CartProviderProps {
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-  const addToCart = (newItem: Omit<CartItem, 'quantity'>) => {
-    setCartItems(prevItems => {
+  const addToCart = (newItem: Omit<CartItem, "quantity">) => {
+    setCartItems((prevItems) => {
       // Check if item with same id, size, and frame already exists
       const existingItemIndex = prevItems.findIndex(
-        item => item.id === newItem.id && item.size === newItem.size && item.frame === newItem.frame
+        (item) =>
+          item.id === newItem.id &&
+          item.size === newItem.size &&
+          item.frame === newItem.frame,
       );
 
       if (existingItemIndex !== -1) {
@@ -58,17 +61,17 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   };
 
   const removeFromCart = (id: number) => {
-    setCartItems(prevItems => prevItems.filter(item => item.id !== id));
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
   const updateQuantity = (id: number, newQuantity: number) => {
     if (newQuantity <= 0) {
       removeFromCart(id);
     } else {
-      setCartItems(prevItems =>
-        prevItems.map(item =>
-          item.id === id ? { ...item, quantity: newQuantity } : item
-        )
+      setCartItems((prevItems) =>
+        prevItems.map((item) =>
+          item.id === id ? { ...item, quantity: newQuantity } : item,
+        ),
       );
     }
   };
@@ -78,7 +81,10 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   };
 
   const getCartTotal = () => {
-    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+    return cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0,
+    );
   };
 
   const getCartItemsCount = () => {
@@ -95,9 +101,5 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     getCartItemsCount,
   };
 
-  return (
-    <CartContext.Provider value={value}>
-      {children}
-    </CartContext.Provider>
-  );
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
