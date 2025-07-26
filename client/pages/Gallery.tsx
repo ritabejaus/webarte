@@ -320,9 +320,9 @@ export default function Gallery() {
                 <Slider
                   value={priceRange}
                   onValueChange={setPriceRange}
-                  max={300}
+                  max={20}
                   min={0}
-                  step={10}
+                  step={1}
                   className="w-full"
                 />
                 <div className="flex items-center justify-between text-sm">
