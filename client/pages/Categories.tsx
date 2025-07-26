@@ -16,9 +16,9 @@ const categories = [
     image: "/placeholder.svg",
     color: "from-purple-500 to-pink-500",
     examples: [
-      { id: 1, title: "Figuras en Crecimiento", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F8148f42d866e42e9bc0246b3905bc629?format=webp&width=800", price: 89 },
-      { id: 2, title: "Hoy Su Voy a Ti Ch", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F855c73c7656048769aaec1b94a947d01?format=webp&width=800", price: 145 },
-      { id: 6, title: "Tiempo y Espacio", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F9e8f97e5509e4cefb906f378a3eb0018?format=webp&width=800", price: 156 }
+      { id: 1, title: "Figuras en Crecimiento", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F8148f42d866e42e9bc0246b3905bc629?format=webp&width=800", price: 10 },
+      { id: 2, title: "Hoy Su Voy a Ti Ch", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F855c73c7656048769aaec1b94a947d01?format=webp&width=800", price: 15 },
+      { id: 6, title: "Tiempo y Espacio", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F9e8f97e5509e4cefb906f378a3eb0018?format=webp&width=800", price: 10 }
     ]
   },
   {
@@ -31,9 +31,9 @@ const categories = [
     image: "/placeholder.svg",
     color: "from-blue-500 to-cyan-500",
     examples: [
-      { id: 4, title: "Urban Dreams", image: "/placeholder.svg", price: 145 },
-      { id: 5, title: "Street Life", image: "/placeholder.svg", price: 92 },
-      { id: 6, title: "City Lights", image: "/placeholder.svg", price: 158 }
+      { id: 4, title: "Urban Dreams", image: "/placeholder.svg", price: 15 },
+      { id: 5, title: "Street Life", image: "/placeholder.svg", price: 10 },
+      { id: 6, title: "City Lights", image: "/placeholder.svg", price: 15 }
     ]
   },
   {
@@ -46,9 +46,9 @@ const categories = [
     image: "/placeholder.svg",
     color: "from-green-500 to-emerald-500",
     examples: [
-      { id: 4, title: "Jardín Interior", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F79a2f69167354bdcada4447668a484af?format=webp&width=800", price: 199 },
-      { id: 5, title: "Paisaje Digital", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F2baac664c2ae45b498d8e7bb8c4e7169?format=webp&width=800", price: 78 },
-      { id: 8, title: "Estación de Rita", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F4d1395f370344d069d365a30f5ca6262?format=webp&width=800", price: 112 }
+      { id: 4, title: "Jardín Interior", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F79a2f69167354bdcada4447668a484af?format=webp&width=800", price: 15 },
+      { id: 5, title: "Paisaje Digital", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F2baac664c2ae45b498d8e7bb8c4e7169?format=webp&width=800", price: 10 },
+      { id: 8, title: "Estación de Rita", image: "https://cdn.builder.io/api/v1/image/assets%2F59b7496b894045c9af43cac31546f45c%2F4d1395f370344d069d365a30f5ca6262?format=webp&width=800", price: 10 }
     ]
   },
   {
