@@ -356,8 +356,8 @@ export default function Gallery() {
                         {size} ×
                       </Badge>
                     ))}
-                    {(priceRange[0] > 0 || priceRange[1] < 300) && (
-                      <Badge variant="secondary" className="cursor-pointer" onClick={() => setPriceRange([0, 300])}>
+                    {(priceRange[0] > 0 || priceRange[1] < 20) && (
+                      <Badge variant="secondary" className="cursor-pointer" onClick={() => setPriceRange([0, 20])}>
                         ${priceRange[0]} - ${priceRange[1]} ×
                       </Badge>
                     )}
