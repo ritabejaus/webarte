@@ -287,7 +287,11 @@ export default function ProductDetail() {
 
             {/* Add to Cart */}
             <div className="space-y-3">
-              <Button size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Button
+                size="lg"
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+                onClick={handleAddToCart}
+              >
                 <ShoppingCart className="mr-2 h-5 w-5" />
                 Add to Cart - ${currentPrice * quantity}
               </Button>
