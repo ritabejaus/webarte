@@ -145,7 +145,7 @@ export default function Gallery() {
     setSelectedCategories([]);
     setSelectedStyles([]);
     setSelectedSizes([]);
-    setPriceRange([0, 300]);
+    setPriceRange([0, 20]);
   };
 
   const filteredArtworks = artworks.filter(artwork => {
