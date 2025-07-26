@@ -92,12 +92,33 @@ const styles = ["Modern", "Contemporary", "Minimalist", "Realistic", "Classical"
 const sizes = ["Small", "Medium", "Large"];
 
 export default function Gallery() {
+  const [searchParams] = useSearchParams();
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedStyles, setSelectedStyles] = useState<string[]>([]);
   const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState([0, 300]);
   const [sortBy, setSortBy] = useState("featured");
+
+  // Handle URL parameters on component mount
+  useEffect(() => {
+    const categoryParam = searchParams.get('category');
+    if (categoryParam) {
+      // Convert URL category ID to display name
+      const categoryMap: { [key: string]: string } = {
+        'abstract': 'Abstract',
+        'photography': 'Photography',
+        'nature': 'Nature',
+        'landscape': 'Landscape',
+        'digital-art': 'Digital Art',
+        'portraits': 'Portraits'
+      };
+      const categoryName = categoryMap[categoryParam];
+      if (categoryName && categories.includes(categoryName)) {
+        setSelectedCategories([categoryName]);
+      }
+    }
+  }, [searchParams]);
 
   const toggleFilter = (filterArray: string[], setFilterArray: (value: string[]) => void, value: string) => {
     if (filterArray.includes(value)) {
