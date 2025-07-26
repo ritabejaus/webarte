@@ -65,6 +65,16 @@ export default function ProductDetail() {
   const [selectedFrame, setSelectedFrame] = useState("");
   const [quantity, setQuantity] = useState(1);
 
+  // Dynamic pricing based on size
+  const getPriceForSize = (size: string) => {
+    if (size.includes("Small")) return 5;
+    if (size.includes("Medium")) return 10;
+    if (size.includes("Large")) return 15;
+    return 10; // default Medium price
+  };
+
+  const currentPrice = selectedSize ? getPriceForSize(selectedSize) : productData.price;
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header/Navigation */}
