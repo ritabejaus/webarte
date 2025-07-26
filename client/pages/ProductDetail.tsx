@@ -204,16 +204,13 @@ export default function ProductDetail() {
 
               {/* Price */}
               <div className="flex items-center gap-3 mb-6">
-                <span className="text-3xl font-bold">${productData.price}</span>
-                {productData.originalPrice && (
-                  <>
-                    <span className="text-xl text-muted-foreground line-through">
-                      ${productData.originalPrice}
-                    </span>
-                    <Badge className="bg-accent text-accent-foreground">
-                      Save ${productData.originalPrice - productData.price}
-                    </Badge>
-                  </>
+                <span className="text-3xl font-bold">${currentPrice}</span>
+                {selectedSize && (
+                  <span className="text-sm text-muted-foreground">
+                    {selectedSize.includes("Small") && "Small (12\" x 16\")"}
+                    {selectedSize.includes("Medium") && "Medium (18\" x 24\")"}
+                    {selectedSize.includes("Large") && "Large (24\" x 32\")"}
+                  </span>
                 )}
               </div>
             </div>
