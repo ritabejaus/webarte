@@ -13,7 +13,6 @@ const initialCartItems = [
   {
     id: 1,
     title: "Abstract Horizon",
-    artist: "Luna Martinez",
     price: 89,
     originalPrice: 120,
     image: "/placeholder.svg",
@@ -24,7 +23,6 @@ const initialCartItems = [
   {
     id: 2,
     title: "Urban Dreams",
-    artist: "Alex Chen",
     price: 145,
     image: "/placeholder.svg",
     size: "Large (24\" x 32\")",
@@ -78,8 +76,8 @@ export default function Cart() {
               <Link to="/categories" className="transition-colors hover:text-foreground/80 text-foreground/60">
                 Categories
               </Link>
-              <Link to="/artists" className="transition-colors hover:text-foreground/80 text-foreground/60">
-                Artists
+              <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+                About Me
               </Link>
               <Link to="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
                 About
@@ -166,7 +164,7 @@ export default function Cart() {
                         <div className="flex items-start justify-between">
                           <div className="min-w-0 flex-1">
                             <h3 className="font-semibold truncate">{item.title}</h3>
-                            <p className="text-sm text-muted-foreground">{item.artist}</p>
+                            <p className="text-sm text-muted-foreground">Original Artwork</p>
                             <div className="mt-1 space-y-1">
                               <p className="text-xs text-muted-foreground">Size: {item.size}</p>
                               <p className="text-xs text-muted-foreground">Frame: {item.frame}</p>
